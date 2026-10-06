@@ -250,7 +250,7 @@ export const SERVICES: ServiceItem[] = [
       'Business Cards & Stationery Assets',
     ],
     timeline: '2 Weeks',
-    pageRoute: 'portfolio',
+    pageRoute: 'ui-ux',
   },
   {
     id: 'general-trading',

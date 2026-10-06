@@ -13,7 +13,7 @@ import {
   Layers,
   ArrowUpRight,
 } from 'lucide-react';
-import { COMPANY_INFO, STATS, SERVICES, EXECUTIVES, PROJECTS, WHY_CHOOSE_US } from '../../data/content';
+import { COMPANY_INFO, STATS, SERVICES, EXECUTIVES, WHY_CHOOSE_US } from '../../data/content';
 import { HeroVisual } from '../HeroVisual';
 import { SquircleIcon } from '../SquircleIcon';
 import { InteractiveAppPhone } from '../InteractiveAppPhone';

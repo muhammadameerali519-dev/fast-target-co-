@@ -7,7 +7,6 @@ export type PageId =
   | 'ui-ux'
   | 'social-media'
   | 'trading'
-  | 'portfolio'
   | 'why-us'
   | 'contact'
   | 'admin';

@@ -107,12 +107,6 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
     }
   };
 
-  const handleQuickUnlock = () => {
-    sessionStorage.setItem('ft_admin_auth', 'true');
-    setIsAuthenticated(true);
-    setAuthError('');
-  };
-
   const handleLogout = () => {
     sessionStorage.removeItem('ft_admin_auth');
     setIsAuthenticated(false);
@@ -315,19 +309,9 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
             </button>
           </form>
 
-          {/* Friendly Quick-Unlock button for immediate demo access */}
-          <div className="pt-2 border-t border-white/10 space-y-2">
-            <button
-              onClick={handleQuickUnlock}
-              className="w-full py-2.5 rounded-[16px] bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 text-cyan-300 text-xs font-semibold flex items-center justify-center gap-2 transition-colors"
-            >
-              <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
-              <span>1-Click Executive Unlock</span>
-            </button>
-            <p className="text-[11px] text-slate-400">
-              Secured client-side vault for Fast Target Co Executive Directors.
-            </p>
-          </div>
+          <p className="text-[11px] text-slate-400">
+            Secured client-side vault for Fast Target Co Executive Directors.
+          </p>
 
         </div>
       </div>

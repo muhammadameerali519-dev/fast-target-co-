@@ -109,10 +109,10 @@ export const AppDevPage: React.FC<AppDevPageProps> = ({ onNavigate }) => {
             </button>
 
             <button
-              onClick={() => onNavigate('portfolio')}
+              onClick={() => onNavigate('services')}
               className="px-6 py-4 rounded-[20px] bg-white/5 hover:bg-white/10 text-white font-bold text-xs sm:text-sm uppercase tracking-wider border border-white/10 transition-all"
             >
-              View App Portfolio
+              Explore All Services
             </button>
           </div>
         </div>
