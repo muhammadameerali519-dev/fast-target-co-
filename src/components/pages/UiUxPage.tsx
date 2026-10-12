@@ -73,26 +73,26 @@ export const UiUxPage: React.FC<UiUxPageProps> = ({ onNavigate }) => {
       
       {/* 1. Hero Section */}
       <div className="text-center max-w-4xl mx-auto space-y-6">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/25 text-cyan-300 text-xs font-semibold uppercase tracking-wider">
-          <Palette className="w-3.5 h-3.5" />
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-50 border border-sky-200 text-sky-800 text-xs font-semibold uppercase tracking-wider shadow-sm">
+          <Palette className="w-3.5 h-3.5 text-blue-600" />
           <span>Product Design & Human Interface Studio</span>
         </div>
 
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-black font-['Outfit'] text-white uppercase tracking-tight leading-[1.08]">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-black font-['Outfit'] text-slate-900 uppercase tracking-tight leading-[1.08]">
           DESIGN THAT PEOPLE <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-200">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-sky-600 to-blue-500">
             REMEMBER.
           </span>
         </h1>
 
-        <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
           We combine mathematical spatial balance, continuous-corner squircles, and refined typography into unforgettable digital experiences that elevate brand prestige.
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
           <button
             onClick={() => onNavigate('contact')}
-            className="px-8 py-4 rounded-[20px] bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold text-xs sm:text-sm uppercase tracking-wider shadow-[0_0_30px_rgba(37,99,235,0.5)] hover:scale-105 transition-all flex items-center gap-2"
+            className="px-8 py-4 rounded-[20px] bg-gradient-to-r from-blue-600 via-blue-500 to-sky-500 text-white font-bold text-xs sm:text-sm uppercase tracking-wider shadow-md shadow-blue-500/25 hover:shadow-lg hover:shadow-sky-400/30 hover:scale-105 transition-all flex items-center gap-2"
           >
             <span>COMMISSION UI/UX DESIGN</span>
             <ArrowRight className="w-4 h-4" />
@@ -101,15 +101,15 @@ export const UiUxPage: React.FC<UiUxPageProps> = ({ onNavigate }) => {
       </div>
 
       {/* 2. Interactive 6-Stage Framework: Research → Wireframe → Prototype → Visual Design → Testing → Final Product */}
-      <div className="rounded-[36px] bg-gradient-to-b from-slate-900/90 via-[#070F26] to-slate-950 p-8 sm:p-12 border border-blue-500/30 space-y-10 shadow-[0_20px_50px_rgba(0,0,0,0.6)]">
+      <div className="rounded-[36px] bg-white p-8 sm:p-12 border border-slate-200 space-y-10 shadow-sm">
         <div className="text-center max-w-2xl mx-auto space-y-2">
-          <span className="text-xs font-bold uppercase tracking-[0.25em] text-blue-400">
+          <span className="text-xs font-bold uppercase tracking-[0.25em] text-blue-600">
             End-to-End Design Framework
           </span>
-          <h2 className="text-3xl sm:text-4xl font-black font-['Outfit'] text-white uppercase tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-black font-['Outfit'] text-slate-900 uppercase tracking-tight">
             FROM RESEARCH TO PIXEL-PERFECT REALITY
           </h2>
-          <p className="text-slate-400 text-sm">
+          <p className="text-slate-600 text-sm">
             Select a stage to explore our systematic human-centered design pipeline.
           </p>
         </div>
@@ -124,17 +124,17 @@ export const UiUxPage: React.FC<UiUxPageProps> = ({ onNavigate }) => {
                 onClick={() => setActiveStage(idx)}
                 className={`p-3.5 rounded-[20px] text-left transition-all duration-300 border flex flex-col justify-between ${
                   isActive
-                    ? 'bg-blue-600/30 border-cyan-400 shadow-[0_0_20px_rgba(56,189,248,0.3)] scale-[1.03]'
-                    : 'bg-white/[0.03] border-white/10 hover:bg-white/[0.06]'
+                    ? 'bg-blue-600 text-white border-blue-600 shadow-md shadow-blue-500/25 scale-[1.03]'
+                    : 'bg-slate-50 border-slate-200 hover:bg-sky-50 text-slate-700'
                 }`}
               >
                 <div className="flex justify-between items-center mb-1">
-                  <span className={`text-[10px] font-mono font-bold ${isActive ? 'text-cyan-300' : 'text-slate-500'}`}>
+                  <span className={`text-[10px] font-mono font-bold ${isActive ? 'text-sky-200' : 'text-slate-400'}`}>
                     {st.step}
                   </span>
-                  {isActive && <span className="w-1.5 h-1.5 rounded-full bg-cyan-300 animate-ping" />}
+                  {isActive && <span className="w-1.5 h-1.5 rounded-full bg-sky-200 animate-ping" />}
                 </div>
-                <span className={`text-xs font-bold font-['Outfit'] ${isActive ? 'text-white' : 'text-slate-300'}`}>
+                <span className={`text-xs font-bold font-['Outfit'] ${isActive ? 'text-white' : 'text-slate-800'}`}>
                   {st.name}
                 </span>
               </button>
@@ -150,50 +150,50 @@ export const UiUxPage: React.FC<UiUxPageProps> = ({ onNavigate }) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -15 }}
             transition={{ duration: 0.3 }}
-            className="p-6 sm:p-8 rounded-[28px] bg-gradient-to-r from-blue-950/40 via-slate-900/60 to-slate-950/80 border border-blue-400/30 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center backdrop-blur-xl"
+            className="p-6 sm:p-8 rounded-[28px] bg-sky-50/50 border border-sky-200 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
           >
             <div className="lg:col-span-6 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-300 text-xs font-bold uppercase tracking-wider border border-cyan-500/20 font-mono">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-100 text-blue-700 text-xs font-bold uppercase tracking-wider border border-sky-200 font-mono">
                 <span>STAGE {UIUX_STAGES[activeStage].step}: {UIUX_STAGES[activeStage].name.toUpperCase()}</span>
               </div>
-              <h3 className="text-2xl sm:text-3xl font-bold font-['Outfit'] text-white">
+              <h3 className="text-2xl sm:text-3xl font-bold font-['Outfit'] text-slate-900">
                 {UIUX_STAGES[activeStage].title}
               </h3>
-              <p className="text-sm text-slate-300 leading-relaxed">
+              <p className="text-sm text-slate-600 leading-relaxed">
                 {UIUX_STAGES[activeStage].desc}
               </p>
 
-              <div className="pt-2 flex items-center gap-2 text-xs font-semibold text-emerald-400 bg-emerald-500/10 px-3.5 py-2 rounded-[14px] border border-emerald-500/20 w-fit">
-                <CheckCircle2 className="w-4 h-4 shrink-0" />
+              <div className="pt-2 flex items-center gap-2 text-xs font-semibold text-blue-700 bg-sky-100/70 px-3.5 py-2 rounded-[14px] border border-sky-200 w-fit">
+                <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0" />
                 <span>Outcome: {UIUX_STAGES[activeStage].highlight}</span>
               </div>
             </div>
 
             {/* Interactive Stage Preview Glass Card */}
-            <div className="lg:col-span-6 p-5 sm:p-6 rounded-[24px] bg-slate-950/80 border border-white/10 space-y-3 shadow-inner">
-              <div className="flex items-center justify-between pb-2 border-b border-white/10 text-xs text-slate-400">
-                <span className="flex items-center gap-1.5 text-cyan-300">
+            <div className="lg:col-span-6 p-5 sm:p-6 rounded-[24px] bg-white border border-slate-200 space-y-3 shadow-sm">
+              <div className="flex items-center justify-between pb-2 border-b border-slate-100 text-xs text-slate-500">
+                <span className="flex items-center gap-1.5 text-blue-600 font-semibold">
                   <Eye className="w-3.5 h-3.5" /> FAST TARGET Design Token Inspector
                 </span>
-                <span className="font-mono">Figma Spec v4</span>
+                <span className="font-mono text-slate-400">Figma Spec v4</span>
               </div>
 
               <div className="grid grid-cols-2 gap-2 text-xs">
-                <div className="p-3 rounded-[16px] bg-white/[0.03] border border-white/[0.06]">
-                  <span className="text-[10px] text-slate-400 block">Corner Radius</span>
-                  <span className="font-bold text-white font-mono">28px iOS Squircle</span>
+                <div className="p-3 rounded-[16px] bg-slate-50 border border-slate-200">
+                  <span className="text-[10px] text-slate-500 block">Corner Radius</span>
+                  <span className="font-bold text-slate-900 font-mono">28px iOS Squircle</span>
                 </div>
-                <div className="p-3 rounded-[16px] bg-white/[0.03] border border-white/[0.06]">
-                  <span className="text-[10px] text-slate-400 block">Motion Timing</span>
-                  <span className="font-bold text-cyan-300 font-mono">cubic-bezier(0.16, 1, 0.3, 1)</span>
+                <div className="p-3 rounded-[16px] bg-slate-50 border border-slate-200">
+                  <span className="text-[10px] text-slate-500 block">Motion Timing</span>
+                  <span className="font-bold text-blue-600 font-mono">cubic-bezier(0.16, 1, 0.3, 1)</span>
                 </div>
-                <div className="p-3 rounded-[16px] bg-white/[0.03] border border-white/[0.06]">
-                  <span className="text-[10px] text-slate-400 block">Contrast Ratio</span>
-                  <span className="font-bold text-emerald-400 font-mono">14.8:1 (WCAG AAA)</span>
+                <div className="p-3 rounded-[16px] bg-slate-50 border border-slate-200">
+                  <span className="text-[10px] text-slate-500 block">Contrast Ratio</span>
+                  <span className="font-bold text-emerald-600 font-mono">14.8:1 (WCAG AAA)</span>
                 </div>
-                <div className="p-3 rounded-[16px] bg-white/[0.03] border border-white/[0.06]">
-                  <span className="text-[10px] text-slate-400 block">Color Space</span>
-                  <span className="font-bold text-blue-300 font-mono">Display P3 Wide Gamut</span>
+                <div className="p-3 rounded-[16px] bg-slate-50 border border-slate-200">
+                  <span className="text-[10px] text-slate-500 block">Color Space</span>
+                  <span className="font-bold text-sky-600 font-mono">Display P3 Wide Gamut</span>
                 </div>
               </div>
             </div>
@@ -217,16 +217,16 @@ export const UiUxPage: React.FC<UiUxPageProps> = ({ onNavigate }) => {
           {
             icon: 'Palette',
             title: 'Executive Color Hierarchy',
-            desc: 'Deep cosmic navies, pure crisp whites, electric blues, and subtle gradients tuned for maximum luxury perception.',
+            desc: 'Deep crisp whites, sky blues, royal blues, and subtle slate borders tuned for maximum luxury perception.',
           },
         ].map((pillar, i) => (
           <div
             key={i}
-            className="p-6 rounded-[28px] bg-white/[0.03] border border-white/[0.08] hover:border-blue-400/50 transition-all space-y-3"
+            className="p-6 rounded-[28px] bg-white border border-slate-200 hover:border-sky-300 shadow-sm hover:shadow-md transition-all space-y-3"
           >
             <SquircleIcon name={pillar.icon} size="md" variant="blue" />
-            <h4 className="text-lg font-bold font-['Outfit'] text-white">{pillar.title}</h4>
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">{pillar.desc}</p>
+            <h4 className="text-lg font-bold font-['Outfit'] text-slate-900">{pillar.title}</h4>
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">{pillar.desc}</p>
           </div>
         ))}
       </div>

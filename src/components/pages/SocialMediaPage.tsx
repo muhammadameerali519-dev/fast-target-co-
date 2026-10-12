@@ -86,26 +86,26 @@ export const SocialMediaPage: React.FC<SocialMediaPageProps> = ({ onNavigate }) 
       
       {/* 1. Hero Section */}
       <div className="text-center max-w-4xl mx-auto space-y-6">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/25 text-cyan-300 text-xs font-semibold uppercase tracking-wider">
-          <Share2 className="w-3.5 h-3.5" />
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-50 border border-sky-200 text-sky-800 text-xs font-semibold uppercase tracking-wider shadow-sm">
+          <Share2 className="w-3.5 h-3.5 text-blue-600" />
           <span>Social Media & Digital Growth Studio</span>
         </div>
 
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-black font-['Outfit'] text-white uppercase tracking-tight leading-[1.08]">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-black font-['Outfit'] text-slate-900 uppercase tracking-tight leading-[1.08]">
           SOCIAL MEDIA & <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-200">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-sky-600 to-blue-500">
             DIGITAL GROWTH.
           </span>
         </h1>
 
-        <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
           We don't post random content. We craft algorithmic campaigns, viral short-form video strategies, and premium visual identities that convert views into high-value clients.
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
           <button
             onClick={() => onNavigate('contact')}
-            className="px-8 py-4 rounded-[20px] bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold text-xs sm:text-sm uppercase tracking-wider shadow-[0_0_30px_rgba(37,99,235,0.5)] hover:scale-105 transition-all flex items-center gap-2"
+            className="px-8 py-4 rounded-[20px] bg-gradient-to-r from-blue-600 via-blue-500 to-sky-500 text-white font-bold text-xs sm:text-sm uppercase tracking-wider shadow-md shadow-blue-500/25 hover:shadow-lg hover:shadow-sky-400/30 hover:scale-105 transition-all flex items-center gap-2"
           >
             <span>LAUNCH SOCIAL GROWTH</span>
             <ArrowRight className="w-4 h-4" />
@@ -118,36 +118,36 @@ export const SocialMediaPage: React.FC<SocialMediaPageProps> = ({ onNavigate }) 
         
         {/* Left: Simulated Instagram / Reels Vertical Feed Card */}
         <div className="lg:col-span-6 flex justify-center">
-          <div className="relative w-full max-w-[340px] rounded-[36px] bg-gradient-to-b from-slate-900 to-black p-4 border border-blue-400/30 shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_30px_rgba(37,99,235,0.25)] select-none">
+          <div className="relative w-full max-w-[340px] rounded-[36px] bg-white p-4 border border-slate-200 shadow-xl select-none">
             
             {/* Header */}
-            <div className="flex items-center justify-between pb-3 border-b border-white/10">
+            <div className="flex items-center justify-between pb-3 border-b border-slate-100">
               <div className="flex items-center gap-2.5">
-                <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-cyan-400 to-blue-600 p-[2px]">
-                  <div className="w-full h-full rounded-full bg-slate-950 flex items-center justify-center font-bold text-xs text-white">
+                <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-sky-400 to-blue-600 p-[2px]">
+                  <div className="w-full h-full rounded-full bg-white flex items-center justify-center font-bold text-xs text-blue-600">
                     FT
                   </div>
                 </div>
                 <div>
                   <div className="flex items-center gap-1">
-                    <span className="text-xs font-bold text-white">fasttarget.co</span>
-                    <span className="w-2.5 h-2.5 rounded-full bg-blue-500 flex items-center justify-center text-[7px] text-white">✓</span>
+                    <span className="text-xs font-bold text-slate-900">fasttarget.co</span>
+                    <span className="w-2.5 h-2.5 rounded-full bg-blue-600 flex items-center justify-center text-[7px] text-white">✓</span>
                   </div>
-                  <p className="text-[10px] text-slate-400">Global Trading & Agency</p>
+                  <p className="text-[10px] text-slate-500">Global Trading & Agency</p>
                 </div>
               </div>
-              <span className="text-[10px] font-semibold text-blue-400 px-2 py-1 rounded-full bg-blue-500/10 border border-blue-400/20">
+              <span className="text-[10px] font-semibold text-blue-700 px-2 py-1 rounded-full bg-sky-50 border border-sky-200">
                 Trending ⚡
               </span>
             </div>
 
             {/* Video / Creative Stage */}
-            <div className="relative my-3 rounded-[24px] overflow-hidden bg-gradient-to-br from-blue-950 via-slate-900 to-[#0B132B] h-[280px] flex flex-col justify-between p-4 border border-white/10">
+            <div className="relative my-3 rounded-[24px] overflow-hidden bg-gradient-to-br from-blue-700 via-blue-600 to-sky-600 h-[280px] flex flex-col justify-between p-4 shadow-inner text-white">
               <div className="flex justify-between items-center text-xs">
-                <span className="bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full text-white font-mono text-[10px] flex items-center gap-1">
-                  <Flame className="w-3 h-3 text-amber-400" /> Viral Strategy
+                <span className="bg-white/20 backdrop-blur-md px-2.5 py-1 rounded-full text-white font-mono text-[10px] flex items-center gap-1">
+                  <Flame className="w-3 h-3 text-amber-300" /> Viral Strategy
                 </span>
-                <span className="bg-blue-600/80 px-2.5 py-1 rounded-full text-[10px] font-bold text-white">
+                <span className="bg-sky-400/90 px-2.5 py-1 rounded-full text-[10px] font-bold text-slate-950">
                   9:16 Ultra HD
                 </span>
               </div>
@@ -159,22 +159,22 @@ export const SocialMediaPage: React.FC<SocialMediaPageProps> = ({ onNavigate }) 
                 <h4 className="text-lg font-black font-['Outfit'] text-white">
                   HOW FAST TARGET SCALES GLOBAL BRANDS
                 </h4>
-                <p className="text-[11px] text-cyan-200">Watch the 60-second agency case study</p>
+                <p className="text-[11px] text-sky-100">Watch the 60-second agency case study</p>
               </div>
 
               {/* Progress bar */}
               <div className="w-full h-1 bg-white/20 rounded-full overflow-hidden">
-                <div className="w-3/4 h-full bg-gradient-to-r from-blue-400 to-cyan-300" />
+                <div className="w-3/4 h-full bg-sky-300" />
               </div>
             </div>
 
             {/* Interaction Row */}
             <div className="space-y-2 pt-1">
-              <div className="flex items-center justify-between text-slate-300">
+              <div className="flex items-center justify-between text-slate-600">
                 <div className="flex items-center gap-4">
                   <button
                     onClick={handleLike}
-                    className="flex items-center gap-1.5 hover:text-rose-400 transition-colors"
+                    className="flex items-center gap-1.5 hover:text-rose-500 transition-colors"
                   >
                     <Heart
                       className={`w-5 h-5 ${isLiked ? 'text-rose-500 fill-rose-500' : ''}`}
@@ -190,8 +190,8 @@ export const SocialMediaPage: React.FC<SocialMediaPageProps> = ({ onNavigate }) 
                 <Bookmark className="w-5 h-5" />
               </div>
 
-              <p className="text-xs text-slate-300 leading-relaxed">
-                <strong className="text-white">fasttarget.co</strong> Seamlessly connecting cross-border commerce and modern app architecture. #agency #trading #iOS #growth
+              <p className="text-xs text-slate-600 leading-relaxed">
+                <strong className="text-slate-900">fasttarget.co</strong> Seamlessly connecting cross-border commerce and modern app architecture. #agency #trading #iOS #growth
               </p>
             </div>
           </div>
@@ -199,15 +199,15 @@ export const SocialMediaPage: React.FC<SocialMediaPageProps> = ({ onNavigate }) 
 
         {/* Right: Campaign Growth & Ad ROI Estimator */}
         <div className="lg:col-span-6 space-y-6">
-          <div className="rounded-[32px] bg-gradient-to-b from-slate-900/90 to-[#070F26] p-6 sm:p-8 border border-blue-500/30 space-y-6 shadow-xl">
+          <div className="rounded-[32px] bg-white p-6 sm:p-8 border border-slate-200 space-y-6 shadow-sm">
             <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-cyan-400 flex items-center gap-1.5">
+              <span className="text-xs font-bold uppercase tracking-wider text-blue-600 flex items-center gap-1.5">
                 <BarChart3 className="w-4 h-4" /> Growth Impact Calculator
               </span>
-              <h3 className="text-2xl font-bold font-['Outfit'] text-white mt-1">
+              <h3 className="text-2xl font-bold font-['Outfit'] text-slate-900 mt-1">
                 Estimate Your Campaign Reach
               </h3>
-              <p className="text-xs text-slate-400">
+              <p className="text-xs text-slate-500">
                 Adjust your monthly growth budget to simulate algorithmic reach and lead potential.
               </p>
             </div>
@@ -215,8 +215,8 @@ export const SocialMediaPage: React.FC<SocialMediaPageProps> = ({ onNavigate }) 
             {/* Range Slider */}
             <div className="space-y-2">
               <div className="flex justify-between text-xs font-semibold">
-                <span className="text-slate-300">Monthly Ad & Content Budget</span>
-                <span className="text-cyan-300 font-mono text-base">${monthlyBudget.toLocaleString()} / mo</span>
+                <span className="text-slate-600">Monthly Ad & Content Budget</span>
+                <span className="text-blue-600 font-mono text-base font-bold">${monthlyBudget.toLocaleString()} / mo</span>
               </div>
               <input
                 type="range"
@@ -225,9 +225,9 @@ export const SocialMediaPage: React.FC<SocialMediaPageProps> = ({ onNavigate }) 
                 step="250"
                 value={monthlyBudget}
                 onChange={(e) => setMonthlyBudget(Number(e.target.value))}
-                className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-cyan-400"
+                className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
               />
-              <div className="flex justify-between text-[10px] text-slate-500 font-mono">
+              <div className="flex justify-between text-[10px] text-slate-400 font-mono">
                 <span>$500</span>
                 <span>$7,500</span>
                 <span>$15,000+</span>
@@ -236,23 +236,23 @@ export const SocialMediaPage: React.FC<SocialMediaPageProps> = ({ onNavigate }) 
 
             {/* Estimated Metrics Grid */}
             <div className="grid grid-cols-3 gap-3 pt-2">
-              <div className="p-3.5 rounded-[18px] bg-white/[0.04] border border-white/10 text-center">
-                <span className="text-[10px] text-slate-400 uppercase tracking-wider block">Est. Impressions</span>
-                <span className="text-lg sm:text-xl font-black font-['Outfit'] text-cyan-300">
+              <div className="p-3.5 rounded-[18px] bg-sky-50/70 border border-sky-100 text-center">
+                <span className="text-[10px] text-slate-500 uppercase tracking-wider block">Est. Impressions</span>
+                <span className="text-lg sm:text-xl font-black font-['Outfit'] text-blue-700">
                   {estimatedReach.toLocaleString()}+
                 </span>
               </div>
 
-              <div className="p-3.5 rounded-[18px] bg-white/[0.04] border border-white/10 text-center">
-                <span className="text-[10px] text-slate-400 uppercase tracking-wider block">Targeted Clicks</span>
-                <span className="text-lg sm:text-xl font-black font-['Outfit'] text-white">
+              <div className="p-3.5 rounded-[18px] bg-sky-50/70 border border-sky-100 text-center">
+                <span className="text-[10px] text-slate-500 uppercase tracking-wider block">Targeted Clicks</span>
+                <span className="text-lg sm:text-xl font-black font-['Outfit'] text-sky-700">
                   {estimatedClicks.toLocaleString()}
                 </span>
               </div>
 
-              <div className="p-3.5 rounded-[18px] bg-white/[0.04] border border-white/10 text-center">
-                <span className="text-[10px] text-slate-400 uppercase tracking-wider block">Qualified Leads</span>
-                <span className="text-lg sm:text-xl font-black font-['Outfit'] text-emerald-400">
+              <div className="p-3.5 rounded-[18px] bg-sky-50/70 border border-sky-100 text-center">
+                <span className="text-[10px] text-slate-500 uppercase tracking-wider block">Qualified Leads</span>
+                <span className="text-lg sm:text-xl font-black font-['Outfit'] text-emerald-600">
                   {estimatedLeads.toLocaleString()}
                 </span>
               </div>
@@ -260,7 +260,7 @@ export const SocialMediaPage: React.FC<SocialMediaPageProps> = ({ onNavigate }) 
 
             <button
               onClick={() => onNavigate('contact')}
-              className="w-full py-3.5 rounded-[18px] bg-gradient-to-r from-blue-600 to-cyan-500 text-white text-xs font-bold uppercase tracking-wider shadow-lg hover:scale-[1.02] transition-all flex items-center justify-center gap-2"
+              className="w-full py-3.5 rounded-[18px] bg-gradient-to-r from-blue-600 to-sky-500 text-white text-xs font-bold uppercase tracking-wider shadow-md shadow-blue-500/25 hover:shadow-lg hover:shadow-sky-400/30 hover:scale-[1.02] transition-all flex items-center justify-center gap-2"
             >
               <span>Book Growth Strategy Call</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -272,10 +272,10 @@ export const SocialMediaPage: React.FC<SocialMediaPageProps> = ({ onNavigate }) 
       {/* 3. All Social Media Services Grid */}
       <div className="space-y-10">
         <div className="text-center max-w-2xl mx-auto space-y-2">
-          <span className="text-xs font-bold uppercase tracking-[0.25em] text-blue-400">
+          <span className="text-xs font-bold uppercase tracking-[0.25em] text-blue-600">
             Comprehensive Growth Stack
           </span>
-          <h2 className="text-3xl sm:text-4xl font-black font-['Outfit'] text-white uppercase tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-black font-['Outfit'] text-slate-900 uppercase tracking-tight">
             SOCIAL MEDIA CAPABILITIES
           </h2>
         </div>
@@ -284,13 +284,13 @@ export const SocialMediaPage: React.FC<SocialMediaPageProps> = ({ onNavigate }) 
           {SOCIAL_SERVICES.map((item, idx) => (
             <div
               key={idx}
-              className="p-6 rounded-[28px] bg-white/[0.03] border border-white/[0.08] hover:border-blue-400/50 transition-all space-y-3 group"
+              className="p-6 rounded-[28px] bg-white border border-slate-200 hover:border-sky-300 shadow-sm hover:shadow-md transition-all space-y-3 group"
             >
               <SquircleIcon name={item.icon} size="md" variant="blue" />
-              <h4 className="text-base font-bold font-['Outfit'] text-white group-hover:text-cyan-300 transition-colors">
+              <h4 className="text-base font-bold font-['Outfit'] text-slate-900 group-hover:text-blue-600 transition-colors">
                 {item.title}
               </h4>
-              <p className="text-xs text-slate-300 leading-relaxed">
+              <p className="text-xs text-slate-600 leading-relaxed">
                 {item.desc}
               </p>
             </div>

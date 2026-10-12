@@ -54,16 +54,16 @@ export const WhyUsPage: React.FC<WhyUsPageProps> = ({ onNavigate }) => {
       
       {/* 1. Hero Section */}
       <div className="text-center max-w-4xl mx-auto space-y-6">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/25 text-cyan-300 text-xs font-semibold uppercase tracking-wider">
-          <Award className="w-3.5 h-3.5" />
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-50 border border-sky-200 text-sky-800 text-xs font-semibold uppercase tracking-wider shadow-sm">
+          <Award className="w-3.5 h-3.5 text-blue-600" />
           <span>The FAST TARGET Standard</span>
         </div>
 
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-black font-['Outfit'] text-white uppercase tracking-tight leading-[1.08]">
-          WHY <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-200">FAST TARGET CO</span>?
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-black font-['Outfit'] text-slate-900 uppercase tracking-tight leading-[1.08]">
+          WHY <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-sky-600 to-blue-500">FAST TARGET CO</span>?
         </h1>
 
-        <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
           We combine the speed and bespoke attention of an elite engineering studio with the global logistics reach of an established trading enterprise.
         </p>
       </div>
@@ -77,13 +77,13 @@ export const WhyUsPage: React.FC<WhyUsPageProps> = ({ onNavigate }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: idx * 0.08 }}
-            className="p-8 rounded-[32px] bg-gradient-to-b from-slate-900/90 via-[#070F26] to-slate-950 border border-white/10 hover:border-blue-400/60 shadow-[0_10px_30px_rgba(0,0,0,0.4)] transition-all duration-300 space-y-4 group hover:-translate-y-1.5"
+            className="p-8 rounded-[32px] bg-white border border-slate-200 hover:border-sky-300 shadow-sm hover:shadow-md transition-all duration-300 space-y-4 group hover:-translate-y-1.5"
           >
             <SquircleIcon name={item.icon} size="lg" variant="blue" />
-            <h3 className="text-xl font-bold font-['Outfit'] text-white group-hover:text-cyan-300 transition-colors">
+            <h3 className="text-xl font-bold font-['Outfit'] text-slate-900 group-hover:text-blue-600 transition-colors">
               {item.title}
             </h3>
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
               {item.description}
             </p>
           </motion.div>
@@ -91,12 +91,12 @@ export const WhyUsPage: React.FC<WhyUsPageProps> = ({ onNavigate }) => {
       </div>
 
       {/* 3. Comparison Matrix: FAST TARGET CO vs Traditional Vendors */}
-      <div className="rounded-[36px] bg-gradient-to-b from-[#0B132B] via-[#050C1E] to-[#020617] p-8 sm:p-12 border border-blue-500/30 space-y-8 shadow-2xl overflow-hidden">
+      <div className="rounded-[36px] bg-white p-8 sm:p-12 border border-slate-200 space-y-8 shadow-sm overflow-hidden">
         <div className="text-center max-w-2xl mx-auto space-y-2">
-          <span className="text-xs font-bold uppercase tracking-[0.25em] text-cyan-400">
+          <span className="text-xs font-bold uppercase tracking-[0.25em] text-blue-600">
             Agency Comparison
           </span>
-          <h2 className="text-2xl sm:text-3xl font-black font-['Outfit'] text-white uppercase">
+          <h2 className="text-2xl sm:text-3xl font-black font-['Outfit'] text-slate-900 uppercase">
             HOW WE COMPARE TO CONVENTIONAL VENDORS
           </h2>
         </div>
@@ -104,29 +104,29 @@ export const WhyUsPage: React.FC<WhyUsPageProps> = ({ onNavigate }) => {
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse min-w-[600px]">
             <thead>
-              <tr className="border-b border-white/10 text-xs uppercase tracking-wider text-slate-400">
+              <tr className="border-b border-slate-200 text-xs uppercase tracking-wider text-slate-500">
                 <th className="py-4 px-4">Evaluation Metric</th>
-                <th className="py-4 px-4 text-cyan-300 bg-blue-500/10 rounded-t-2xl font-bold">
+                <th className="py-4 px-4 text-blue-700 bg-sky-50 rounded-t-2xl font-bold">
                   FAST TARGET CO
                 </th>
                 <th className="py-4 px-4">Traditional Agency / Freelancers</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-white/5 text-xs sm:text-sm">
+            <tbody className="divide-y divide-slate-100 text-xs sm:text-sm">
               {COMPARISON_ROWS.map((row, idx) => (
-                <tr key={idx} className="hover:bg-white/[0.02] transition-colors">
-                  <td className="py-4 px-4 font-bold text-white max-w-[180px]">
+                <tr key={idx} className="hover:bg-sky-50/40 transition-colors">
+                  <td className="py-4 px-4 font-bold text-slate-900 max-w-[180px]">
                     {row.feature}
                   </td>
-                  <td className="py-4 px-4 text-slate-100 bg-blue-500/[0.06] font-medium border-l border-r border-blue-500/20">
+                  <td className="py-4 px-4 text-slate-800 bg-sky-50/60 font-medium border-l border-r border-sky-100">
                     <div className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
                       <span>{row.fastTarget}</span>
                     </div>
                   </td>
-                  <td className="py-4 px-4 text-slate-400">
+                  <td className="py-4 px-4 text-slate-500">
                     <div className="flex items-start gap-2">
-                      <XCircle className="w-4 h-4 text-slate-600 shrink-0 mt-0.5" />
+                      <XCircle className="w-4 h-4 text-slate-400 shrink-0 mt-0.5" />
                       <span>{row.others}</span>
                     </div>
                   </td>
@@ -140,10 +140,10 @@ export const WhyUsPage: React.FC<WhyUsPageProps> = ({ onNavigate }) => {
       {/* 4. Client Testimonials */}
       <div className="space-y-8">
         <div className="text-center max-w-2xl mx-auto space-y-2">
-          <span className="text-xs font-bold uppercase tracking-[0.25em] text-blue-400">
+          <span className="text-xs font-bold uppercase tracking-[0.25em] text-blue-600">
             Client Voices
           </span>
-          <h2 className="text-3xl sm:text-4xl font-black font-['Outfit'] text-white uppercase tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-black font-['Outfit'] text-slate-900 uppercase tracking-tight">
             TRUSTED BY BUSINESS LEADERS
           </h2>
         </div>
@@ -152,20 +152,20 @@ export const WhyUsPage: React.FC<WhyUsPageProps> = ({ onNavigate }) => {
           {TESTIMONIALS.map((t, idx) => (
             <div
               key={idx}
-              className="p-6 sm:p-8 rounded-[32px] bg-white/[0.03] border border-white/[0.08] flex flex-col justify-between space-y-6"
+              className="p-6 sm:p-8 rounded-[32px] bg-white border border-slate-200 hover:border-sky-300 shadow-sm hover:shadow-md flex flex-col justify-between space-y-6 transition-all"
             >
               <div className="space-y-3">
                 <div className="flex text-amber-400 gap-1 text-sm">
                   {'★'.repeat(t.rating)}
                 </div>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed italic">
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed italic">
                   "{t.quote}"
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-white/10">
-                <p className="text-sm font-bold text-white font-['Outfit']">{t.author}</p>
-                <p className="text-xs text-blue-400">{t.role}</p>
+              <div className="pt-4 border-t border-slate-100">
+                <p className="text-sm font-bold text-slate-900 font-['Outfit']">{t.author}</p>
+                <p className="text-xs text-blue-600 font-semibold">{t.role}</p>
               </div>
             </div>
           ))}

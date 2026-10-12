@@ -34,10 +34,10 @@ export const SquircleIcon: React.FC<SquircleIconProps> = ({
   };
 
   const variantClasses = {
-    blue: 'bg-gradient-to-br from-blue-500/20 via-blue-600/10 to-transparent border border-blue-400/30 text-blue-400 shadow-[0_0_20px_rgba(59,130,246,0.25)] hover:border-blue-400/60 hover:shadow-[0_0_25px_rgba(59,130,246,0.4)]',
-    white: 'bg-white/10 backdrop-blur-md border border-white/20 text-white shadow-lg hover:bg-white/20 hover:border-white/40',
-    dark: 'bg-slate-900/80 border border-slate-700/60 text-slate-200 shadow-md hover:border-blue-500/50',
-    glow: 'bg-blue-600 text-white border border-blue-400/50 shadow-[0_0_30px_rgba(37,99,235,0.6)] hover:shadow-[0_0_40px_rgba(37,99,235,0.8)]',
+    blue: 'bg-sky-50 border border-sky-200 text-blue-600 shadow-sm hover:bg-sky-100 hover:border-sky-300 hover:text-blue-700',
+    white: 'bg-white border border-slate-200 text-slate-700 shadow-sm hover:bg-slate-50 hover:border-slate-300',
+    dark: 'bg-slate-900 border border-slate-800 text-white shadow-sm',
+    glow: 'bg-gradient-to-br from-blue-600 to-sky-500 text-white border border-blue-400/50 shadow-md shadow-blue-500/25 hover:shadow-lg hover:shadow-sky-400/30',
   };
 
   return (

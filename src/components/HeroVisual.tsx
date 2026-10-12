@@ -47,13 +47,13 @@ export const HeroVisual: React.FC = () => {
     for (let i = 0; i < numPoints; i++) {
       const theta = Math.acos(2 * Math.random() - 1);
       const phi = Math.random() * Math.PI * 2;
-      points.push({
+        points.push({
         x: radius * Math.sin(theta) * Math.cos(phi),
         y: radius * Math.sin(theta) * Math.sin(phi),
         z: radius * Math.cos(theta),
         baseR: Math.random() * 2.2 + 1.2,
         pulseSpeed: Math.random() * 0.05 + 0.02,
-        color: Math.random() > 0.4 ? '#38bdf8' : Math.random() > 0.5 ? '#60a5fa' : '#ffffff',
+        color: Math.random() > 0.4 ? '#0284c7' : Math.random() > 0.5 ? '#2563eb' : '#0ea5e9',
       });
     }
 
@@ -80,9 +80,9 @@ export const HeroVisual: React.FC = () => {
 
       // Draw glowing central orb
       const gradient = ctx.createRadialGradient(centerX, centerY, 10, centerX, centerY, radius * 1.1);
-      gradient.addColorStop(0, 'rgba(56, 189, 248, 0.22)');
-      gradient.addColorStop(0.4, 'rgba(37, 99, 235, 0.12)');
-      gradient.addColorStop(0.8, 'rgba(2, 6, 23, 0.02)');
+      gradient.addColorStop(0, 'rgba(14, 165, 233, 0.18)');
+      gradient.addColorStop(0.4, 'rgba(37, 99, 235, 0.08)');
+      gradient.addColorStop(0.8, 'rgba(224, 242, 254, 0.04)');
       gradient.addColorStop(1, 'transparent');
 
       ctx.fillStyle = gradient;
@@ -104,7 +104,7 @@ export const HeroVisual: React.FC = () => {
         const scale = fov / (fov + z2);
         const px = centerX + x1 * scale;
         const py = centerY + y2 * scale;
-        const alpha = Math.max(0.1, (z2 + radius) / (2 * radius));
+        const alpha = Math.max(0.15, (z2 + radius) / (2 * radius));
 
         return { px, py, scale, z2, alpha, color: p.color, baseR: p.baseR };
       });
@@ -113,7 +113,7 @@ export const HeroVisual: React.FC = () => {
       projected.sort((a, b) => a.z2 - b.z2);
 
       // Draw interconnecting network lines
-      ctx.lineWidth = 0.8;
+      ctx.lineWidth = 0.9;
       for (let i = 0; i < projected.length; i++) {
         for (let j = i + 1; j < projected.length; j++) {
           const dx = projected[i].px - projected[j].px;
@@ -121,8 +121,8 @@ export const HeroVisual: React.FC = () => {
           const dist = Math.sqrt(dx * dx + dy * dy);
 
           if (dist < 65) {
-            const lineAlpha = (1 - dist / 65) * 0.28 * projected[i].alpha * projected[j].alpha;
-            ctx.strokeStyle = `rgba(56, 189, 248, ${lineAlpha})`;
+            const lineAlpha = (1 - dist / 65) * 0.35 * projected[i].alpha * projected[j].alpha;
+            ctx.strokeStyle = `rgba(2, 132, 199, ${lineAlpha})`;
             ctx.beginPath();
             ctx.moveTo(projected[i].px, projected[i].py);
             ctx.lineTo(projected[j].px, projected[j].py);
@@ -135,13 +135,13 @@ export const HeroVisual: React.FC = () => {
       ctx.save();
       ctx.translate(centerX, centerY);
       ctx.rotate(rotY * 0.6);
-      ctx.strokeStyle = 'rgba(59, 130, 246, 0.25)';
+      ctx.strokeStyle = 'rgba(37, 99, 235, 0.25)';
       ctx.lineWidth = 1.2;
       ctx.beginPath();
       ctx.ellipse(0, 0, radius * 1.2, radius * 0.45, Math.PI / 4, 0, Math.PI * 2);
       ctx.stroke();
 
-      ctx.strokeStyle = 'rgba(56, 189, 248, 0.15)';
+      ctx.strokeStyle = 'rgba(14, 165, 233, 0.22)';
       ctx.beginPath();
       ctx.ellipse(0, 0, radius * 1.35, radius * 0.35, -Math.PI / 5, 0, Math.PI * 2);
       ctx.stroke();
@@ -151,8 +151,8 @@ export const HeroVisual: React.FC = () => {
       for (const p of projected) {
         ctx.fillStyle = p.color;
         ctx.globalAlpha = p.alpha;
-        ctx.shadowBlur = 10;
-        ctx.shadowColor = '#38bdf8';
+        ctx.shadowBlur = 8;
+        ctx.shadowColor = '#0284c7';
 
         ctx.beginPath();
         ctx.arc(p.px, p.py, p.baseR * p.scale, 0, Math.PI * 2);
@@ -177,7 +177,7 @@ export const HeroVisual: React.FC = () => {
   return (
     <div className="relative w-full h-full min-h-[380px] sm:min-h-[460px] lg:min-h-[540px] flex items-center justify-center pointer-events-none select-none">
       {/* Radial soft backdrop glow */}
-      <div className="absolute w-72 h-72 rounded-full bg-blue-500/20 blur-3xl pointer-events-none" />
+      <div className="absolute w-72 h-72 rounded-full bg-sky-200/50 blur-3xl pointer-events-none" />
       <canvas ref={canvasRef} className="w-full h-full pointer-events-auto" />
     </div>
   );

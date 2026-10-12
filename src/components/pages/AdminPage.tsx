@@ -258,28 +258,28 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
   if (!isAuthenticated) {
     return (
       <div className="min-h-[80vh] flex items-center justify-center px-4 py-20 relative">
-        <div className="w-full max-w-md rounded-[32px] glass-panel-highlight p-8 sm:p-10 border border-blue-500/30 text-center space-y-6 shadow-2xl relative z-10">
+        <div className="w-full max-w-md rounded-[32px] bg-white p-8 sm:p-10 border border-slate-200 text-center space-y-6 shadow-xl relative z-10">
           
           <div className="flex justify-center">
             <CompanyLogo variant="stacked" />
           </div>
 
           <div className="space-y-1.5 pt-2">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-400/20 text-cyan-300 text-[11px] font-semibold uppercase tracking-wider">
-              <ShieldCheck className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-50 border border-sky-200 text-sky-800 text-[11px] font-semibold uppercase tracking-wider shadow-sm">
+              <ShieldCheck className="w-3.5 h-3.5 text-blue-600" />
               <span>Executive Access Portal</span>
             </div>
-            <h2 className="text-xl sm:text-2xl font-black font-['Outfit'] text-white">
+            <h2 className="text-xl sm:text-2xl font-black font-['Outfit'] text-slate-900">
               INQUIRIES ADMIN
             </h2>
-            <p className="text-xs text-slate-300">
-              Enter executive PIN to view and manage client leads and consultations.
+            <p className="text-xs text-slate-600">
+              Enter executive passcode to view and manage client leads and consultations.
             </p>
           </div>
 
           <form onSubmit={handleLogin} className="space-y-4 text-left">
             <div className="space-y-1.5">
-              <label className="text-xs font-semibold text-slate-300">
+              <label className="text-xs font-semibold text-slate-700">
                 Security Passcode
               </label>
               <div className="relative">
@@ -288,28 +288,28 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
                   placeholder="Enter executive passcode"
                   value={passcode}
                   onChange={(e) => setPasscode(e.target.value)}
-                  className="w-full px-4 py-3 rounded-[18px] bg-white/[0.05] border border-white/15 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-cyan-400 transition-colors"
+                  className="w-full px-4 py-3 rounded-[18px] bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 text-sm focus:bg-white focus:outline-none focus:border-blue-500 transition-colors"
                   autoFocus
                 />
               </div>
             </div>
 
             {authError && (
-              <div className="p-3 rounded-[14px] bg-rose-500/20 border border-rose-500/30 text-rose-300 text-xs text-center font-medium">
+              <div className="p-3 rounded-[14px] bg-rose-50 border border-rose-200 text-rose-700 text-xs text-center font-medium">
                 {authError}
               </div>
             )}
 
             <button
               type="submit"
-              className="w-full py-3.5 rounded-[18px] bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white text-xs font-bold uppercase tracking-wider shadow-lg shadow-blue-500/25 transition-all flex items-center justify-center gap-2"
+              className="w-full py-3.5 rounded-[18px] bg-gradient-to-r from-blue-600 to-sky-500 hover:from-blue-700 hover:to-sky-600 text-white text-xs font-bold uppercase tracking-wider shadow-md shadow-blue-500/25 transition-all flex items-center justify-center gap-2"
             >
               <Unlock className="w-4 h-4" />
               <span>Unlock Admin Dashboard</span>
             </button>
           </form>
 
-          <p className="text-[11px] text-slate-400">
+          <p className="text-[11px] text-slate-500">
             Secured client-side vault for Fast Target Co Executive Directors.
           </p>
 
@@ -323,18 +323,18 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
     <div className="pt-24 sm:pt-28 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
       
       {/* 1. Header Banner & Quick Actions */}
-      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 p-6 sm:p-8 rounded-[32px] glass-panel-highlight border border-white/15">
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 p-6 sm:p-8 rounded-[32px] bg-white border border-slate-200 shadow-sm">
         <div className="space-y-1">
           <div className="flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="text-xs font-semibold uppercase tracking-wider text-emerald-400">
+            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
+            <span className="text-xs font-semibold uppercase tracking-wider text-emerald-700">
               Live Inquiries Vault & CRM
             </span>
           </div>
-          <h1 className="text-2xl sm:text-4xl font-black font-['Outfit'] text-white">
+          <h1 className="text-2xl sm:text-4xl font-black font-['Outfit'] text-slate-900">
             CLIENT INQUIRIES DESK
           </h1>
-          <p className="text-xs sm:text-sm text-slate-300">
+          <p className="text-xs sm:text-sm text-slate-600">
             Real-time lead capture from Website Contact Form, UAE & PK WhatsApp Desks, and Phone simulators.
           </p>
         </div>
@@ -342,7 +342,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
         <div className="flex flex-wrap items-center gap-2.5">
           <button
             onClick={() => setIsAddModalOpen(true)}
-            className="px-4 py-2.5 rounded-[16px] bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white text-xs font-bold flex items-center gap-2 shadow-lg shadow-blue-500/20 transition-all"
+            className="px-4 py-2.5 rounded-[16px] bg-gradient-to-r from-blue-600 to-sky-500 hover:from-blue-700 hover:to-sky-600 text-white text-xs font-bold flex items-center gap-2 shadow-md shadow-blue-500/25 transition-all"
           >
             <Plus className="w-4 h-4" />
             <span>Add Manual Lead</span>
@@ -350,24 +350,24 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
 
           <button
             onClick={handleExportCSV}
-            className="px-3.5 py-2.5 rounded-[16px] bg-white/[0.06] hover:bg-white/[0.12] border border-white/10 text-white text-xs font-semibold flex items-center gap-2 transition-colors"
+            className="px-3.5 py-2.5 rounded-[16px] bg-white hover:bg-sky-50 border border-slate-200 text-slate-700 text-xs font-semibold flex items-center gap-2 transition-colors shadow-sm"
           >
-            <Download className="w-4 h-4 text-cyan-400" />
+            <Download className="w-4 h-4 text-blue-600" />
             <span>Export CSV</span>
           </button>
 
           <button
             onClick={resetToDemoInquiries}
             title="Reset to fresh demo sample leads"
-            className="px-3 py-2.5 rounded-[16px] bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 text-slate-300 text-xs font-medium flex items-center gap-1.5 transition-colors"
+            className="px-3 py-2.5 rounded-[16px] bg-white hover:bg-slate-50 border border-slate-200 text-slate-600 text-xs font-medium flex items-center gap-1.5 transition-colors shadow-sm"
           >
-            <RefreshCw className="w-3.5 h-3.5 text-slate-400" />
+            <RefreshCw className="w-3.5 h-3.5 text-slate-500" />
             <span>Reset Demo</span>
           </button>
 
           <button
             onClick={handleLogout}
-            className="px-3 py-2.5 rounded-[16px] bg-rose-500/15 hover:bg-rose-500/25 border border-rose-500/30 text-rose-300 text-xs font-semibold flex items-center gap-1.5 transition-colors"
+            className="px-3 py-2.5 rounded-[16px] bg-rose-50 hover:bg-rose-100 border border-rose-200 text-rose-700 text-xs font-semibold flex items-center gap-1.5 transition-colors shadow-sm"
           >
             <Lock className="w-3.5 h-3.5" />
             <span>Lock</span>
@@ -378,57 +378,57 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
       {/* 2. Key Metrics Summary Grid */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         
-        <div className="p-5 rounded-[24px] glass-panel border border-white/10 space-y-1">
-          <div className="flex items-center justify-between text-slate-400 text-xs font-medium">
+        <div className="p-5 rounded-[24px] bg-white border border-slate-200 shadow-sm space-y-1">
+          <div className="flex items-center justify-between text-slate-500 text-xs font-medium">
             <span>Total Inquiries</span>
-            <Users className="w-4 h-4 text-blue-400" />
+            <Users className="w-4 h-4 text-blue-600" />
           </div>
-          <div className="text-3xl font-black font-['Outfit'] text-white">
+          <div className="text-3xl font-black font-['Outfit'] text-slate-900">
             {totalCount}
           </div>
-          <p className="text-[11px] text-slate-400">Captured across all channels</p>
+          <p className="text-[11px] text-slate-500">Captured across all channels</p>
         </div>
 
-        <div className="p-5 rounded-[24px] glass-panel border border-cyan-500/25 space-y-1 bg-cyan-950/20">
-          <div className="flex items-center justify-between text-cyan-300 text-xs font-medium">
+        <div className="p-5 rounded-[24px] bg-sky-50 border border-sky-200 shadow-sm space-y-1">
+          <div className="flex items-center justify-between text-blue-700 text-xs font-medium">
             <span>New Leads (Unread)</span>
             <span className="flex h-2 w-2 relative">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-sky-500"></span>
             </span>
           </div>
-          <div className="text-3xl font-black font-['Outfit'] text-cyan-300">
+          <div className="text-3xl font-black font-['Outfit'] text-blue-700">
             {newCount}
           </div>
-          <p className="text-[11px] text-cyan-200/70">Awaiting executive response</p>
+          <p className="text-[11px] text-sky-800">Awaiting executive response</p>
         </div>
 
-        <div className="p-5 rounded-[24px] glass-panel border border-amber-500/20 space-y-1 bg-amber-950/10">
-          <div className="flex items-center justify-between text-amber-300 text-xs font-medium">
+        <div className="p-5 rounded-[24px] bg-amber-50/70 border border-amber-200 shadow-sm space-y-1">
+          <div className="flex items-center justify-between text-amber-800 text-xs font-medium">
             <span>In Negotiation</span>
-            <Clock className="w-4 h-4 text-amber-400" />
+            <Clock className="w-4 h-4 text-amber-600" />
           </div>
-          <div className="text-3xl font-black font-['Outfit'] text-amber-300">
+          <div className="text-3xl font-black font-['Outfit'] text-amber-800">
             {inProgressCount}
           </div>
-          <p className="text-[11px] text-amber-200/70">Active proposals & meetings</p>
+          <p className="text-[11px] text-amber-700">Active proposals & meetings</p>
         </div>
 
-        <div className="p-5 rounded-[24px] glass-panel border border-emerald-500/20 space-y-1 bg-emerald-950/10">
-          <div className="flex items-center justify-between text-emerald-300 text-xs font-medium">
+        <div className="p-5 rounded-[24px] bg-emerald-50/70 border border-emerald-200 shadow-sm space-y-1">
+          <div className="flex items-center justify-between text-emerald-800 text-xs font-medium">
             <span>Closed / Won</span>
-            <CheckCircle className="w-4 h-4 text-emerald-400" />
+            <CheckCircle className="w-4 h-4 text-emerald-600" />
           </div>
-          <div className="text-3xl font-black font-['Outfit'] text-emerald-300">
+          <div className="text-3xl font-black font-['Outfit'] text-emerald-800">
             {closedCount}
           </div>
-          <p className="text-[11px] text-emerald-200/70">Contracts signed & active</p>
+          <p className="text-[11px] text-emerald-700">Contracts signed & active</p>
         </div>
 
       </div>
 
       {/* 3. Search & Filter Bar */}
-      <div className="p-4 sm:p-5 rounded-[24px] glass-panel border border-white/10 space-y-4">
+      <div className="p-4 sm:p-5 rounded-[24px] bg-white border border-slate-200 shadow-sm space-y-4">
         
         <div className="flex flex-col md:flex-row items-center gap-3">
           
@@ -440,12 +440,12 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
               placeholder="Search by client name, email, phone, keyword, or ID..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-11 pr-4 py-2.5 rounded-[16px] bg-white/[0.04] border border-white/10 text-white placeholder-slate-500 text-xs focus:outline-none focus:border-cyan-400 transition-colors"
+              className="w-full pl-11 pr-4 py-2.5 rounded-[16px] bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 text-xs focus:bg-white focus:outline-none focus:border-blue-500 transition-colors"
             />
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery('')}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white text-xs"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700 text-xs"
               >
                 Clear
               </button>
@@ -457,7 +457,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
             <select
               value={serviceFilter}
               onChange={(e) => setServiceFilter(e.target.value)}
-              className="w-full md:w-48 px-3 py-2.5 rounded-[16px] bg-slate-900 border border-white/10 text-slate-200 text-xs focus:outline-none focus:border-cyan-400"
+              className="w-full md:w-48 px-3 py-2.5 rounded-[16px] bg-slate-50 border border-slate-200 text-slate-800 text-xs focus:bg-white focus:outline-none focus:border-blue-500"
             >
               <option value="all">All Services</option>
               <option value="Mobile App Development">Mobile App Dev</option>
@@ -473,7 +473,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
             <select
               value={priorityFilter}
               onChange={(e) => setPriorityFilter(e.target.value)}
-              className="w-full md:w-40 px-3 py-2.5 rounded-[16px] bg-slate-900 border border-white/10 text-slate-200 text-xs focus:outline-none focus:border-cyan-400"
+              className="w-full md:w-40 px-3 py-2.5 rounded-[16px] bg-slate-50 border border-slate-200 text-slate-800 text-xs focus:bg-white focus:outline-none focus:border-blue-500"
             >
               <option value="all">All Priorities</option>
               <option value="high">High Priority</option>
@@ -483,13 +483,13 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
           </div>
 
           {/* View Mode Toggle */}
-          <div className="flex items-center gap-1 p-1 rounded-[14px] bg-white/[0.04] border border-white/10 self-stretch md:self-auto justify-center">
+          <div className="flex items-center gap-1 p-1 rounded-[14px] bg-slate-100 border border-slate-200 self-stretch md:self-auto justify-center">
             <button
               onClick={() => setViewMode('cards')}
               className={`px-3 py-1.5 rounded-[10px] text-xs font-semibold transition-all ${
                 viewMode === 'cards'
-                  ? 'bg-blue-600 text-white shadow'
-                  : 'text-slate-400 hover:text-white'
+                  ? 'bg-blue-600 text-white shadow-sm'
+                  : 'text-slate-600 hover:text-blue-600'
               }`}
             >
               Cards
@@ -498,8 +498,8 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
               onClick={() => setViewMode('table')}
               className={`px-3 py-1.5 rounded-[10px] text-xs font-semibold transition-all ${
                 viewMode === 'table'
-                  ? 'bg-blue-600 text-white shadow'
-                  : 'text-slate-400 hover:text-white'
+                  ? 'bg-blue-600 text-white shadow-sm'
+                  : 'text-slate-600 hover:text-blue-600'
               }`}
             >
               Table
@@ -509,8 +509,8 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
         </div>
 
         {/* Status Filter Pills */}
-        <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-white/5">
-          <span className="text-xs font-medium text-slate-400 mr-1">Status:</span>
+        <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-slate-100">
+          <span className="text-xs font-medium text-slate-500 mr-1">Status:</span>
           {[
             { id: 'all', label: 'All Inquiries', count: inquiries.length },
             { id: 'new', label: 'New Leads', count: inquiries.filter((i) => i.status === 'new').length },
@@ -523,12 +523,12 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
               onClick={() => setStatusFilter(tab.id)}
               className={`px-3 py-1.5 rounded-[12px] text-xs font-medium transition-all flex items-center gap-1.5 ${
                 statusFilter === tab.id
-                  ? 'bg-blue-500/20 text-cyan-300 border border-cyan-400/40'
-                  : 'bg-white/[0.03] text-slate-400 hover:text-slate-200 border border-white/5'
+                  ? 'bg-blue-600 text-white shadow-sm'
+                  : 'bg-slate-50 text-slate-700 hover:bg-sky-50 border border-slate-200'
               }`}
             >
               <span>{tab.label}</span>
-              <span className="px-1.5 py-0.2 rounded-full bg-white/10 text-[10px]">
+              <span className={`px-1.5 py-0.2 rounded-full text-[10px] ${statusFilter === tab.id ? 'bg-white/20 text-white' : 'bg-slate-200 text-slate-700'}`}>
                 {tab.count}
               </span>
             </button>
@@ -539,14 +539,14 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
 
       {/* 4. Inquiries Display */}
       {filteredInquiries.length === 0 ? (
-        <div className="p-16 rounded-[32px] glass-panel text-center space-y-4 border border-white/10">
-          <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center mx-auto text-slate-400">
+        <div className="p-16 rounded-[32px] bg-white text-center space-y-4 border border-slate-200 shadow-sm">
+          <div className="w-16 h-16 rounded-full bg-sky-50 flex items-center justify-center mx-auto text-sky-600">
             <Search className="w-8 h-8" />
           </div>
-          <h3 className="text-xl font-bold font-['Outfit'] text-white">
+          <h3 className="text-xl font-bold font-['Outfit'] text-slate-900">
             No Inquiries Match Your Filter
           </h3>
-          <p className="text-xs text-slate-400 max-w-sm mx-auto">
+          <p className="text-xs text-slate-500 max-w-sm mx-auto">
             Try adjusting your search query or reset the filters to view all leads.
           </p>
           <button
@@ -556,7 +556,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
               setServiceFilter('all');
               setPriorityFilter('all');
             }}
-            className="px-4 py-2 rounded-[14px] bg-white/10 hover:bg-white/15 text-white text-xs font-semibold"
+            className="px-4 py-2 rounded-[14px] bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition-colors"
           >
             Clear All Filters
           </button>
@@ -570,10 +570,10 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
               layout
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className={`p-6 rounded-[28px] glass-panel-hover flex flex-col justify-between space-y-4 border transition-all ${
+              className={`p-6 rounded-[28px] bg-white flex flex-col justify-between space-y-4 border transition-all shadow-sm hover:shadow-md ${
                 inquiry.status === 'new'
-                  ? 'border-cyan-400/40 shadow-[0_0_20px_rgba(6,182,212,0.15)] bg-slate-900/80'
-                  : 'border-white/10 bg-slate-950/70'
+                  ? 'border-sky-300 ring-1 ring-sky-200 bg-gradient-to-b from-sky-50/40 to-white'
+                  : 'border-slate-200'
               }`}
             >
               <div className="space-y-3.5">
@@ -582,17 +582,17 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
                 <div className="flex items-start justify-between gap-2">
                   <div>
                     <div className="flex items-center gap-2">
-                      <span className="text-xs font-mono font-bold text-cyan-300">
+                      <span className="text-xs font-mono font-bold text-sky-700">
                         {inquiry.id}
                       </span>
                       {inquiry.priority === 'high' && (
-                        <span className="px-2 py-0.5 rounded-md bg-rose-500/20 text-rose-300 text-[10px] font-bold uppercase">
+                        <span className="px-2 py-0.5 rounded-md bg-rose-50 border border-rose-200 text-rose-700 text-[10px] font-bold uppercase">
                           VIP High
                         </span>
                       )}
                     </div>
-                    <span className="text-[11px] text-slate-400 flex items-center gap-1 mt-0.5">
-                      <Clock className="w-3 h-3" />
+                    <span className="text-[11px] text-slate-500 flex items-center gap-1 mt-0.5">
+                      <Clock className="w-3 h-3 text-slate-400" />
                       {formatRelativeTime(inquiry.createdAt)}
                     </span>
                   </div>
@@ -603,37 +603,37 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
                     onChange={(e) => handleStatusChange(inquiry.id, e.target.value as InquiryStatus)}
                     className={`px-2.5 py-1 rounded-[10px] text-[11px] font-bold uppercase tracking-wider focus:outline-none cursor-pointer border ${
                       inquiry.status === 'new'
-                        ? 'bg-cyan-500/20 text-cyan-300 border-cyan-400/30'
+                        ? 'bg-sky-50 text-sky-800 border-sky-300'
                         : inquiry.status === 'in_progress'
-                        ? 'bg-amber-500/20 text-amber-300 border-amber-400/30'
+                        ? 'bg-amber-50 text-amber-800 border-amber-300'
                         : inquiry.status === 'contacted'
-                        ? 'bg-blue-500/20 text-blue-300 border-blue-400/30'
-                        : 'bg-emerald-500/20 text-emerald-300 border-emerald-400/30'
+                        ? 'bg-blue-50 text-blue-800 border-blue-300'
+                        : 'bg-emerald-50 text-emerald-800 border-emerald-300'
                     }`}
                   >
-                    <option value="new" className="bg-slate-900 text-cyan-300">New</option>
-                    <option value="contacted" className="bg-slate-900 text-blue-300">Contacted</option>
-                    <option value="in_progress" className="bg-slate-900 text-amber-300">In Progress</option>
-                    <option value="closed" className="bg-slate-900 text-emerald-300">Closed / Won</option>
+                    <option value="new">New</option>
+                    <option value="contacted">Contacted</option>
+                    <option value="in_progress">In Progress</option>
+                    <option value="closed">Closed / Won</option>
                   </select>
                 </div>
 
                 {/* Client Info */}
                 <div className="space-y-1">
-                  <h3 className="text-lg font-bold font-['Outfit'] text-white">
+                  <h3 className="text-lg font-bold font-['Outfit'] text-slate-900">
                     {inquiry.name}
                   </h3>
-                  <div className="flex flex-col text-xs text-slate-300 space-y-1">
+                  <div className="flex flex-col text-xs text-slate-600 space-y-1">
                     <a
                       href={`mailto:${inquiry.email}`}
-                      className="flex items-center gap-1.5 hover:text-cyan-300 truncate"
+                      className="flex items-center gap-1.5 hover:text-blue-600 transition-colors truncate"
                     >
                       <Mail className="w-3.5 h-3.5 text-slate-400 flex-shrink-0" />
                       <span className="truncate">{inquiry.email}</span>
                     </a>
                     <a
                       href={`tel:${inquiry.phone}`}
-                      className="flex items-center gap-1.5 hover:text-cyan-300"
+                      className="flex items-center gap-1.5 hover:text-blue-600 transition-colors"
                     >
                       <Phone className="w-3.5 h-3.5 text-slate-400 flex-shrink-0" />
                       <span>{inquiry.phone}</span>
@@ -643,23 +643,23 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
 
                 {/* Service & Budget Tags */}
                 <div className="flex flex-wrap gap-1.5 pt-1">
-                  <span className="px-2.5 py-1 rounded-[10px] bg-blue-500/10 border border-blue-400/20 text-blue-300 text-[11px] font-medium">
+                  <span className="px-2.5 py-1 rounded-[10px] bg-blue-50 border border-blue-200 text-blue-800 text-[11px] font-medium">
                     {inquiry.service}
                   </span>
-                  <span className="px-2.5 py-1 rounded-[10px] bg-emerald-500/10 border border-emerald-400/20 text-emerald-300 text-[11px] font-semibold">
+                  <span className="px-2.5 py-1 rounded-[10px] bg-emerald-50 border border-emerald-200 text-emerald-800 text-[11px] font-semibold">
                     {inquiry.budget}
                   </span>
                 </div>
 
                 {/* Message Snippet */}
-                <div className="p-3 rounded-[16px] bg-white/[0.03] border border-white/5 text-xs text-slate-300 line-clamp-3 leading-relaxed">
+                <div className="p-3 rounded-[16px] bg-slate-50 border border-slate-200 text-xs text-slate-600 line-clamp-3 leading-relaxed">
                   "{inquiry.message || 'No additional scope details provided.'}"
                 </div>
 
                 {/* Notes preview if any */}
                 {inquiry.notes && inquiry.notes.length > 0 && (
-                  <div className="text-[11px] text-slate-400 flex items-center gap-1.5">
-                    <FileText className="w-3 h-3 text-cyan-400" />
+                  <div className="text-[11px] text-slate-500 flex items-center gap-1.5">
+                    <FileText className="w-3 h-3 text-sky-600" />
                     <span>{inquiry.notes.length} internal note(s) logged</span>
                   </div>
                 )}
@@ -667,14 +667,14 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
               </div>
 
               {/* Card Action Footer */}
-              <div className="pt-3 border-t border-white/10 flex items-center justify-between gap-2">
+              <div className="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
                 
                 {/* 1-Click WhatsApp Direct Reply */}
                 <a
                   href={getWhatsAppReplyLink(inquiry)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 py-2 px-3 rounded-[14px] bg-emerald-600/90 hover:bg-emerald-500 text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow transition-colors"
+                  className="flex-1 py-2 px-3 rounded-[14px] bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-sm transition-colors"
                 >
                   <MessageCircle className="w-3.5 h-3.5" />
                   <span>WhatsApp Lead</span>
@@ -683,16 +683,16 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
                 {/* Open Full Details / Notes Modal */}
                 <button
                   onClick={() => setSelectedInquiry(inquiry)}
-                  className="p-2 rounded-[14px] bg-white/[0.06] hover:bg-white/[0.12] text-slate-200 transition-colors"
+                  className="p-2 rounded-[14px] bg-slate-100 hover:bg-slate-200 text-slate-700 transition-colors"
                   title="View full history & add notes"
                 >
-                  <Eye className="w-4 h-4 text-cyan-400" />
+                  <Eye className="w-4 h-4 text-sky-600" />
                 </button>
 
                 {/* Delete button */}
                 <button
                   onClick={() => handleDelete(inquiry.id)}
-                  className="p-2 rounded-[14px] bg-rose-500/10 hover:bg-rose-500/20 text-rose-400 transition-colors"
+                  className="p-2 rounded-[14px] bg-rose-50 hover:bg-rose-100 text-rose-600 border border-rose-100 transition-colors"
                   title="Delete inquiry"
                 >
                   <Trash2 className="w-4 h-4" />
@@ -704,10 +704,10 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
         </div>
       ) : (
         /* Executive Table Layout */
-        <div className="rounded-[28px] glass-panel border border-white/10 overflow-hidden shadow-2xl">
+        <div className="rounded-[28px] bg-white border border-slate-200 overflow-hidden shadow-sm">
           <div className="overflow-x-auto">
-            <table className="w-full text-left text-xs text-slate-300">
-              <thead className="bg-slate-900/90 text-slate-400 uppercase text-[10px] tracking-wider border-b border-white/10">
+            <table className="w-full text-left text-xs text-slate-600">
+              <thead className="bg-slate-50 text-slate-500 uppercase text-[10px] tracking-wider border-b border-slate-200">
                 <tr>
                   <th className="p-4">ID & Date</th>
                   <th className="p-4">Client Name</th>
@@ -718,51 +718,51 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
                   <th className="p-4 text-right">Quick Actions</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-white/5">
+              <tbody className="divide-y divide-slate-100">
                 {filteredInquiries.map((inquiry) => (
                   <tr
                     key={inquiry.id}
-                    className="hover:bg-white/[0.02] transition-colors"
+                    className="hover:bg-slate-50/80 transition-colors"
                   >
                     <td className="p-4">
-                      <div className="font-mono font-bold text-cyan-300">{inquiry.id}</div>
-                      <div className="text-[11px] text-slate-500">
+                      <div className="font-mono font-bold text-sky-700">{inquiry.id}</div>
+                      <div className="text-[11px] text-slate-400">
                         {new Date(inquiry.createdAt).toLocaleDateString()}
                       </div>
                     </td>
-                    <td className="p-4 font-semibold text-white">
+                    <td className="p-4 font-semibold text-slate-900">
                       {inquiry.name}
                     </td>
                     <td className="p-4 space-y-0.5">
                       <div>{inquiry.phone}</div>
-                      <div className="text-slate-500">{inquiry.email}</div>
+                      <div className="text-slate-400">{inquiry.email}</div>
                     </td>
                     <td className="p-4">
-                      <span className="px-2 py-0.5 rounded-md bg-blue-500/10 text-blue-300">
+                      <span className="px-2 py-0.5 rounded-md bg-blue-50 text-blue-800 border border-blue-200">
                         {inquiry.service}
                       </span>
                     </td>
-                    <td className="p-4 font-semibold text-emerald-300">
+                    <td className="p-4 font-semibold text-emerald-700">
                       {inquiry.budget}
                     </td>
                     <td className="p-4">
                       <select
                         value={inquiry.status}
                         onChange={(e) => handleStatusChange(inquiry.id, e.target.value as InquiryStatus)}
-                        className={`px-2 py-1 rounded-[8px] text-[10px] font-bold uppercase focus:outline-none ${
+                        className={`px-2 py-1 rounded-[8px] text-[10px] font-bold uppercase focus:outline-none border ${
                           inquiry.status === 'new'
-                            ? 'bg-cyan-500/20 text-cyan-300'
+                            ? 'bg-sky-50 text-sky-800 border-sky-300'
                             : inquiry.status === 'in_progress'
-                            ? 'bg-amber-500/20 text-amber-300'
+                            ? 'bg-amber-50 text-amber-800 border-amber-300'
                             : inquiry.status === 'contacted'
-                            ? 'bg-blue-500/20 text-blue-300'
-                            : 'bg-emerald-500/20 text-emerald-300'
+                            ? 'bg-blue-50 text-blue-800 border-blue-300'
+                            : 'bg-emerald-50 text-emerald-800 border-emerald-300'
                         }`}
                       >
-                        <option value="new" className="bg-slate-900">New</option>
-                        <option value="contacted" className="bg-slate-900">Contacted</option>
-                        <option value="in_progress" className="bg-slate-900">In Progress</option>
-                        <option value="closed" className="bg-slate-900">Closed</option>
+                        <option value="new">New</option>
+                        <option value="contacted">Contacted</option>
+                        <option value="in_progress">In Progress</option>
+                        <option value="closed">Closed</option>
                       </select>
                     </td>
                     <td className="p-4 text-right">
@@ -771,21 +771,21 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
                           href={getWhatsAppReplyLink(inquiry)}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="p-1.5 rounded-[10px] bg-emerald-600/80 hover:bg-emerald-500 text-white"
+                          className="p-1.5 rounded-[10px] bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm"
                           title="WhatsApp reply"
                         >
                           <MessageCircle className="w-3.5 h-3.5" />
                         </a>
                         <button
                           onClick={() => setSelectedInquiry(inquiry)}
-                          className="p-1.5 rounded-[10px] bg-white/10 hover:bg-white/20 text-white"
+                          className="p-1.5 rounded-[10px] bg-slate-100 hover:bg-slate-200 text-slate-700"
                           title="View Details"
                         >
                           <Eye className="w-3.5 h-3.5" />
                         </button>
                         <button
                           onClick={() => handleDelete(inquiry.id)}
-                          className="p-1.5 rounded-[10px] bg-rose-500/20 hover:bg-rose-500/30 text-rose-400"
+                          className="p-1.5 rounded-[10px] bg-rose-50 hover:bg-rose-100 text-rose-600 border border-rose-100"
                           title="Delete"
                         >
                           <Trash2 className="w-3.5 h-3.5" />
@@ -803,69 +803,69 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
       {/* --- Detailed Inquiry Inspection & Notes Modal --- */}
       <AnimatePresence>
         {selectedInquiry && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="w-full max-w-2xl rounded-[32px] glass-panel-highlight p-6 sm:p-8 border border-white/20 shadow-2xl space-y-6 max-h-[90vh] overflow-y-auto"
+              className="w-full max-w-2xl rounded-[32px] bg-white p-6 sm:p-8 border border-slate-200 shadow-2xl space-y-6 max-h-[90vh] overflow-y-auto"
             >
               <div className="flex items-start justify-between">
                 <div>
                   <div className="flex items-center gap-2">
-                    <span className="text-sm font-mono font-bold text-cyan-300">
+                    <span className="text-sm font-mono font-bold text-sky-700">
                       {selectedInquiry.id}
                     </span>
-                    <span className="px-2.5 py-0.5 rounded-full bg-blue-500/20 text-blue-300 text-xs font-semibold">
+                    <span className="px-2.5 py-0.5 rounded-full bg-blue-50 border border-blue-200 text-blue-800 text-xs font-semibold">
                       {selectedInquiry.service}
                     </span>
                   </div>
-                  <h2 className="text-2xl font-black font-['Outfit'] text-white mt-1">
+                  <h2 className="text-2xl font-black font-['Outfit'] text-slate-900 mt-1">
                     {selectedInquiry.name}
                   </h2>
                 </div>
                 <button
                   onClick={() => setSelectedInquiry(null)}
-                  className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-slate-300"
+                  className="p-2 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 transition-colors"
                 >
                   <X className="w-5 h-5" />
                 </button>
               </div>
 
               {/* Client Contacts & Scope details */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 rounded-[20px] bg-white/[0.03] border border-white/10 text-xs">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 rounded-[20px] bg-slate-50 border border-slate-200 text-xs">
                 <div className="space-y-1">
-                  <span className="text-slate-400 font-medium">Email:</span>
-                  <div className="font-semibold text-white">{selectedInquiry.email}</div>
+                  <span className="text-slate-500 font-medium">Email:</span>
+                  <div className="font-semibold text-slate-900">{selectedInquiry.email}</div>
                 </div>
                 <div className="space-y-1">
-                  <span className="text-slate-400 font-medium">Phone / WhatsApp:</span>
-                  <div className="font-semibold text-white">{selectedInquiry.phone}</div>
+                  <span className="text-slate-500 font-medium">Phone / WhatsApp:</span>
+                  <div className="font-semibold text-slate-900">{selectedInquiry.phone}</div>
                 </div>
                 <div className="space-y-1">
-                  <span className="text-slate-400 font-medium">Budget Envelope:</span>
-                  <div className="font-semibold text-emerald-400">{selectedInquiry.budget}</div>
+                  <span className="text-slate-500 font-medium">Budget Envelope:</span>
+                  <div className="font-semibold text-emerald-700">{selectedInquiry.budget}</div>
                 </div>
                 <div className="space-y-1">
-                  <span className="text-slate-400 font-medium">Submitted At:</span>
-                  <div className="text-slate-300">{new Date(selectedInquiry.createdAt).toLocaleString()}</div>
+                  <span className="text-slate-500 font-medium">Submitted At:</span>
+                  <div className="text-slate-700">{new Date(selectedInquiry.createdAt).toLocaleString()}</div>
                 </div>
               </div>
 
               {/* Full Scope Message */}
               <div className="space-y-2">
-                <label className="text-xs font-bold text-slate-300 uppercase tracking-wider">
+                <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">
                   Client Project Scope & Description
                 </label>
-                <div className="p-4 rounded-[18px] bg-white/[0.04] border border-white/10 text-xs sm:text-sm text-slate-200 leading-relaxed whitespace-pre-wrap">
+                <div className="p-4 rounded-[18px] bg-slate-50 border border-slate-200 text-xs sm:text-sm text-slate-700 leading-relaxed whitespace-pre-wrap">
                   {selectedInquiry.message || 'No project description attached.'}
                 </div>
               </div>
 
               {/* Internal Notes Thread */}
               <div className="space-y-3">
-                <label className="text-xs font-bold text-slate-300 uppercase tracking-wider flex items-center gap-1.5">
-                  <FileText className="w-3.5 h-3.5 text-cyan-400" />
+                <label className="text-xs font-bold text-slate-700 uppercase tracking-wider flex items-center gap-1.5">
+                  <FileText className="w-3.5 h-3.5 text-sky-600" />
                   <span>Executive Notes & Next Steps ({selectedInquiry.notes?.length || 0})</span>
                 </label>
 
@@ -874,14 +874,14 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
                     selectedInquiry.notes.map((note, idx) => (
                       <div
                         key={idx}
-                        className="p-2.5 rounded-[12px] bg-slate-900/90 border border-white/10 text-xs text-slate-300 flex items-start gap-2"
+                        className="p-2.5 rounded-[12px] bg-slate-50 border border-slate-200 text-xs text-slate-700 flex items-start gap-2"
                       >
-                        <span className="text-cyan-400 mt-0.5">•</span>
+                        <span className="text-sky-600 mt-0.5">•</span>
                         <span>{note}</span>
                       </div>
                     ))
                   ) : (
-                    <p className="text-xs text-slate-500 italic">No notes logged yet.</p>
+                    <p className="text-xs text-slate-400 italic">No notes logged yet.</p>
                   )}
                 </div>
 
@@ -894,11 +894,11 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
                     onKeyDown={(e) => {
                       if (e.key === 'Enter') handleAddNote(selectedInquiry.id);
                     }}
-                    className="flex-1 px-3.5 py-2 rounded-[14px] bg-white/[0.05] border border-white/10 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400"
+                    className="flex-1 px-3.5 py-2 rounded-[14px] bg-slate-50 border border-slate-200 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:bg-white"
                   />
                   <button
                     onClick={() => handleAddNote(selectedInquiry.id)}
-                    className="px-4 py-2 rounded-[14px] bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold"
+                    className="px-4 py-2 rounded-[14px] bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shadow-sm"
                   >
                     Add
                   </button>
@@ -906,19 +906,19 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
               </div>
 
               {/* Modal Direct Reply Actions */}
-              <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-white/10">
+              <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-slate-100">
                 <a
                   href={getWhatsAppReplyLink(selectedInquiry)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 py-3 rounded-[16px] bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold flex items-center justify-center gap-2 shadow-lg"
+                  className="flex-1 py-3 rounded-[16px] bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold flex items-center justify-center gap-2 shadow-sm"
                 >
                   <MessageCircle className="w-4 h-4" />
                   <span>Launch WhatsApp Executive Chat</span>
                 </a>
                 <a
                   href={`mailto:${selectedInquiry.email}?subject=FAST%20TARGET%20CO%20-%20Proposal%20for%20${encodeURIComponent(selectedInquiry.service)}`}
-                  className="px-4 py-3 rounded-[16px] bg-white/10 hover:bg-white/20 text-white text-xs font-bold flex items-center gap-2"
+                  className="px-4 py-3 rounded-[16px] bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold flex items-center gap-2"
                 >
                   <Mail className="w-4 h-4" />
                   <span>Email Client</span>
@@ -933,25 +933,25 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
       {/* --- Manual Inquiry Creation Modal --- */}
       <AnimatePresence>
         {isAddModalOpen && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="w-full max-w-lg rounded-[32px] glass-panel-highlight p-6 sm:p-8 border border-white/20 shadow-2xl space-y-5"
+              className="w-full max-w-lg rounded-[32px] bg-white p-6 sm:p-8 border border-slate-200 shadow-2xl space-y-5"
             >
               <div className="flex items-center justify-between">
                 <div className="space-y-0.5">
-                  <h3 className="text-xl font-bold font-['Outfit'] text-white">
+                  <h3 className="text-xl font-bold font-['Outfit'] text-slate-900">
                     Log Manual Lead
                   </h3>
-                  <p className="text-xs text-slate-400">
+                  <p className="text-xs text-slate-500">
                     Record offline walk-ins, phone calls, or UAE / PK desk inquiries.
                   </p>
                 </div>
                 <button
                   onClick={() => setIsAddModalOpen(false)}
-                  className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-slate-300"
+                  className="p-2 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 transition-colors"
                 >
                   <X className="w-4 h-4" />
                 </button>
@@ -959,49 +959,49 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
 
               <form onSubmit={handleManualSubmit} className="space-y-3.5">
                 <div className="space-y-1">
-                  <label className="text-xs font-semibold text-slate-300">Client / Company Name *</label>
+                  <label className="text-xs font-semibold text-slate-700">Client / Company Name *</label>
                   <input
                     type="text"
                     required
                     placeholder="e.g. Sheikh Rashid"
                     value={manualForm.name}
                     onChange={(e) => setManualForm({ ...manualForm, name: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-[14px] bg-white/[0.05] border border-white/10 text-white text-xs focus:outline-none focus:border-cyan-400"
+                    className="w-full px-3.5 py-2.5 rounded-[14px] bg-slate-50 border border-slate-200 text-slate-900 text-xs focus:outline-none focus:border-sky-500 focus:bg-white"
                   />
                 </div>
 
                 <div className="grid grid-cols-2 gap-3">
                   <div className="space-y-1">
-                    <label className="text-xs font-semibold text-slate-300">Phone Number *</label>
+                    <label className="text-xs font-semibold text-slate-700">Phone Number *</label>
                     <input
                       type="tel"
                       required
                       placeholder="+971 50 123 4567"
                       value={manualForm.phone}
                       onChange={(e) => setManualForm({ ...manualForm, phone: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-[14px] bg-white/[0.05] border border-white/10 text-white text-xs focus:outline-none focus:border-cyan-400"
+                      className="w-full px-3.5 py-2.5 rounded-[14px] bg-slate-50 border border-slate-200 text-slate-900 text-xs focus:outline-none focus:border-sky-500 focus:bg-white"
                     />
                   </div>
 
                   <div className="space-y-1">
-                    <label className="text-xs font-semibold text-slate-300">Email Address</label>
+                    <label className="text-xs font-semibold text-slate-700">Email Address</label>
                     <input
                       type="email"
                       placeholder="client@company.com"
                       value={manualForm.email}
                       onChange={(e) => setManualForm({ ...manualForm, email: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-[14px] bg-white/[0.05] border border-white/10 text-white text-xs focus:outline-none focus:border-cyan-400"
+                      className="w-full px-3.5 py-2.5 rounded-[14px] bg-slate-50 border border-slate-200 text-slate-900 text-xs focus:outline-none focus:border-sky-500 focus:bg-white"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-2 gap-3">
                   <div className="space-y-1">
-                    <label className="text-xs font-semibold text-slate-300">Service Category</label>
+                    <label className="text-xs font-semibold text-slate-700">Service Category</label>
                     <select
                       value={manualForm.service}
                       onChange={(e) => setManualForm({ ...manualForm, service: e.target.value })}
-                      className="w-full px-3 py-2.5 rounded-[14px] bg-slate-900 border border-white/10 text-white text-xs focus:outline-none focus:border-cyan-400"
+                      className="w-full px-3 py-2.5 rounded-[14px] bg-slate-50 border border-slate-200 text-slate-900 text-xs focus:outline-none focus:border-sky-500 focus:bg-white"
                     >
                       <option value="Mobile App Development">Mobile App Dev</option>
                       <option value="Web Development">Web Development</option>
@@ -1012,11 +1012,11 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
                   </div>
 
                   <div className="space-y-1">
-                    <label className="text-xs font-semibold text-slate-300">Budget Range</label>
+                    <label className="text-xs font-semibold text-slate-700">Budget Range</label>
                     <select
                       value={manualForm.budget}
                       onChange={(e) => setManualForm({ ...manualForm, budget: e.target.value })}
-                      className="w-full px-3 py-2.5 rounded-[14px] bg-slate-900 border border-white/10 text-white text-xs focus:outline-none focus:border-cyan-400"
+                      className="w-full px-3 py-2.5 rounded-[14px] bg-slate-50 border border-slate-200 text-slate-900 text-xs focus:outline-none focus:border-sky-500 focus:bg-white"
                     >
                       <option value="Under $2,500">Under $2,500</option>
                       <option value="$2,500 - $5,000">$2,500 - $5,000</option>
@@ -1028,27 +1028,27 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-xs font-semibold text-slate-300">Discussion Notes / Project Scope</label>
+                  <label className="text-xs font-semibold text-slate-700">Discussion Notes / Project Scope</label>
                   <textarea
                     rows={3}
                     placeholder="Brief description of requirements discussed..."
                     value={manualForm.message}
                     onChange={(e) => setManualForm({ ...manualForm, message: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-[14px] bg-white/[0.05] border border-white/10 text-white text-xs focus:outline-none focus:border-cyan-400 resize-none"
+                    className="w-full px-3.5 py-2.5 rounded-[14px] bg-slate-50 border border-slate-200 text-slate-900 text-xs focus:outline-none focus:border-sky-500 focus:bg-white resize-none"
                   />
                 </div>
 
                 <div className="pt-2 flex gap-3">
                   <button
                     type="submit"
-                    className="flex-1 py-3 rounded-[16px] bg-gradient-to-r from-blue-600 to-cyan-500 text-white text-xs font-bold uppercase tracking-wider shadow-lg"
+                    className="flex-1 py-3 rounded-[16px] bg-gradient-to-r from-blue-600 to-sky-500 hover:from-blue-700 hover:to-sky-600 text-white text-xs font-bold uppercase tracking-wider shadow-md transition-all"
                   >
                     Save & Add to Inquiries
                   </button>
                   <button
                     type="button"
                     onClick={() => setIsAddModalOpen(false)}
-                    className="px-4 py-3 rounded-[16px] bg-white/10 text-slate-300 text-xs font-semibold"
+                    className="px-4 py-3 rounded-[16px] bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold"
                   >
                     Cancel
                   </button>

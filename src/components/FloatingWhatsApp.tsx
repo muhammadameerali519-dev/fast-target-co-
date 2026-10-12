@@ -16,31 +16,31 @@ export const FloatingWhatsApp: React.FC = () => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 15 }}
             transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="mb-3 w-[290px] sm:w-[320px] rounded-[28px] bg-gradient-to-b from-[#0B132B]/95 to-[#030714]/95 backdrop-blur-2xl border border-blue-400/30 p-4 shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_30px_rgba(37,99,235,0.3)] text-white select-none"
+            className="mb-3 w-[290px] sm:w-[320px] rounded-[28px] bg-white/95 backdrop-blur-2xl border border-slate-200 p-4 shadow-2xl text-slate-800 select-none"
           >
             {/* Header */}
-            <div className="flex items-center justify-between pb-3 border-b border-white/10">
+            <div className="flex items-center justify-between pb-3 border-b border-slate-100">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-[12px] bg-emerald-500/20 border border-emerald-400/40 flex items-center justify-center text-emerald-400 shadow-[0_0_12px_rgba(16,185,129,0.4)]">
+                <div className="w-8 h-8 rounded-[12px] bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600 shadow-sm">
                   <MessageCircle className="w-4 h-4" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold font-['Outfit']">FAST TARGET Support</h4>
-                  <div className="flex items-center gap-1 text-[10px] text-emerald-400">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <h4 className="text-xs font-bold font-['Outfit'] text-slate-900">FAST TARGET Support</h4>
+                  <div className="flex items-center gap-1 text-[10px] text-emerald-600 font-semibold">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                     <span>Online & Ready to Assist</span>
                   </div>
                 </div>
               </div>
               <button
                 onClick={() => setIsOpen(false)}
-                className="w-6 h-6 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-slate-300 hover:text-white transition-colors"
+                className="w-6 h-6 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500 hover:text-slate-800 transition-colors"
               >
                 <X className="w-3.5 h-3.5" />
               </button>
             </div>
 
-            <p className="text-[11px] text-slate-300 my-3 leading-relaxed">
+            <p className="text-[11px] text-slate-600 my-3 leading-relaxed">
               Connect directly with our executive directors and trade specialists on WhatsApp:
             </p>
 
@@ -51,22 +51,22 @@ export const FloatingWhatsApp: React.FC = () => {
                 href={COMPANY_INFO.contacts.uaeWhatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center justify-between p-2.5 rounded-[18px] bg-white/[0.04] hover:bg-emerald-500/15 border border-white/[0.08] hover:border-emerald-400/40 transition-all duration-200"
+                className="group flex items-center justify-between p-2.5 rounded-[18px] bg-slate-50 hover:bg-emerald-50 border border-slate-200 hover:border-emerald-300 transition-all duration-200"
               >
                 <div className="flex items-center gap-2.5">
-                  <div className="w-7 h-7 rounded-[10px] bg-emerald-500 text-white flex items-center justify-center font-bold text-xs shadow-md">
+                  <div className="w-7 h-7 rounded-[10px] bg-emerald-500 text-white flex items-center justify-center font-bold text-xs shadow-sm">
                     🇦🇪
                   </div>
                   <div>
-                    <span className="block text-xs font-bold text-white group-hover:text-emerald-300 transition-colors">
+                    <span className="block text-xs font-bold text-slate-800 group-hover:text-emerald-700 transition-colors">
                       UAE WhatsApp
                     </span>
-                    <span className="block text-[10px] text-slate-400 font-mono">
+                    <span className="block text-[10px] text-slate-500 font-mono">
                       {COMPANY_INFO.contacts.uaePhone}
                     </span>
                   </div>
                 </div>
-                <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-emerald-300 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-emerald-600 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
 
               {/* Pakistan WhatsApp Option */}
@@ -74,31 +74,31 @@ export const FloatingWhatsApp: React.FC = () => {
                 href={COMPANY_INFO.contacts.pkWhatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center justify-between p-2.5 rounded-[18px] bg-white/[0.04] hover:bg-emerald-500/15 border border-white/[0.08] hover:border-emerald-400/40 transition-all duration-200"
+                className="group flex items-center justify-between p-2.5 rounded-[18px] bg-slate-50 hover:bg-emerald-50 border border-slate-200 hover:border-emerald-300 transition-all duration-200"
               >
                 <div className="flex items-center gap-2.5">
-                  <div className="w-7 h-7 rounded-[10px] bg-emerald-600 text-white flex items-center justify-center font-bold text-xs shadow-md">
+                  <div className="w-7 h-7 rounded-[10px] bg-emerald-600 text-white flex items-center justify-center font-bold text-xs shadow-sm">
                     🇵🇰
                   </div>
                   <div>
-                    <span className="block text-xs font-bold text-white group-hover:text-emerald-300 transition-colors">
+                    <span className="block text-xs font-bold text-slate-800 group-hover:text-emerald-700 transition-colors">
                       Pakistan WhatsApp
                     </span>
-                    <span className="block text-[10px] text-slate-400 font-mono">
+                    <span className="block text-[10px] text-slate-500 font-mono">
                       {COMPANY_INFO.contacts.pkPhone}
                     </span>
                   </div>
                 </div>
-                <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-emerald-300 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-emerald-600 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
             </div>
 
             {/* Sub-note */}
-            <div className="mt-3 pt-2 border-t border-white/10 flex items-center justify-between text-[10px] text-slate-400">
+            <div className="mt-3 pt-2 border-t border-slate-100 flex items-center justify-between text-[10px] text-slate-500">
               <span className="flex items-center gap-1">
-                <ShieldCheck className="w-3 h-3 text-cyan-400" /> Fast Response Guaranteed
+                <ShieldCheck className="w-3 h-3 text-blue-600" /> Fast Response Guaranteed
               </span>
-              <span className="text-blue-400 font-medium">24/7 Digital</span>
+              <span className="text-blue-600 font-semibold">24/7 Digital</span>
             </div>
           </motion.div>
         )}

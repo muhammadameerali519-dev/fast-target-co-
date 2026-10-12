@@ -77,27 +77,27 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#030712] text-slate-100 selection:bg-blue-500 selection:text-white relative overflow-x-hidden font-['Plus_Jakarta_Sans',sans-serif]">
+    <div className="min-h-screen bg-[#F8FAFC] text-slate-800 selection:bg-sky-500 selection:text-white relative overflow-x-hidden font-['Plus_Jakarta_Sans',sans-serif]">
       
-      {/* 1. Global Ambient Background Grid & Cosmic Lights */}
+      {/* 1. Global Ambient Background Grid & Sky Blue / Royal Blue Lights */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
         {/* Subtle grid pattern */}
         <div
           className="absolute inset-0 opacity-[0.035]"
           style={{
-            backgroundImage: `radial-gradient(#ffffff 1px, transparent 1px)`,
+            backgroundImage: `radial-gradient(#0284c7 1px, transparent 1px)`,
             backgroundSize: '32px 32px',
           }}
         />
 
         {/* Top Centered Frosted Flare */}
-        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[550px] bg-gradient-to-b from-blue-600/20 via-cyan-500/10 to-transparent blur-[140px] rounded-full" />
+        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[550px] bg-gradient-to-b from-sky-200/50 via-blue-100/30 to-transparent blur-[140px] rounded-full" />
         
         {/* Left Side Ambient Flare */}
-        <div className="absolute top-1/3 -left-48 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[130px]" />
+        <div className="absolute top-1/3 -left-48 w-[500px] h-[500px] bg-sky-100/70 rounded-full blur-[130px]" />
 
         {/* Right Side Ambient Flare */}
-        <div className="absolute top-2/3 -right-48 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[130px]" />
+        <div className="absolute top-2/3 -right-48 w-[500px] h-[500px] bg-blue-100/60 rounded-full blur-[130px]" />
       </div>
 
       {/* 2. Floating Glassmorphic Navbar */}
