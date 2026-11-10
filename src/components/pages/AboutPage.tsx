@@ -28,6 +28,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
       
       {/* 1. Hero / Company Intro */}
       <div className="text-center max-w-4xl mx-auto space-y-6">
+
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-50 border border-sky-200 text-sky-800 text-xs font-semibold uppercase tracking-wider shadow-sm">
           <Building2 className="w-3.5 h-3.5 text-blue-600" />
           <span>Corporate Overview</span>

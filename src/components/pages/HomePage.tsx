@@ -38,7 +38,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           
           {/* Left Hero Content */}
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-            {/* Eyebrow */}
+            {/* Eyebrow Pill */}
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}

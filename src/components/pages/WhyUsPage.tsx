@@ -14,6 +14,8 @@ import {
 } from 'lucide-react';
 import { WHY_CHOOSE_US, TESTIMONIALS } from '../../data/content';
 import { SquircleIcon } from '../SquircleIcon';
+import { TiltCard } from '../TiltCard';
+import { LuxuryButton } from '../LuxuryButton';
 import { PageId } from '../../types';
 
 interface WhyUsPageProps {
@@ -54,13 +56,15 @@ export const WhyUsPage: React.FC<WhyUsPageProps> = ({ onNavigate }) => {
       
       {/* 1. Hero Section */}
       <div className="text-center max-w-4xl mx-auto space-y-6">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-50 border border-sky-200 text-sky-800 text-xs font-semibold uppercase tracking-wider shadow-sm">
-          <Award className="w-3.5 h-3.5 text-blue-600" />
+        <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white border border-sky-200/90 shadow-sm text-sky-800 text-xs font-bold uppercase tracking-wider">
+          <SquircleIcon variant="glow" size="xs">
+            <Award className="w-3.5 h-3.5 text-white" />
+          </SquircleIcon>
           <span>The FAST TARGET Standard</span>
         </div>
 
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-black font-['Outfit'] text-slate-900 uppercase tracking-tight leading-[1.08]">
-          WHY <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-sky-600 to-blue-500">FAST TARGET CO</span>?
+          WHY <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-sky-600 to-blue-600">FAST TARGET CO</span>?
         </h1>
 
         <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
@@ -68,7 +72,7 @@ export const WhyUsPage: React.FC<WhyUsPageProps> = ({ onNavigate }) => {
         </p>
       </div>
 
-      {/* 2. Six Core Pillars Cards Grid */}
+      {/* 2. Six Core Pillars 3D Tilt Cards Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {WHY_CHOOSE_US.map((item, idx) => (
           <motion.div
@@ -77,21 +81,25 @@ export const WhyUsPage: React.FC<WhyUsPageProps> = ({ onNavigate }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: idx * 0.08 }}
-            className="p-8 rounded-[32px] bg-white border border-slate-200 hover:border-sky-300 shadow-sm hover:shadow-md transition-all duration-300 space-y-4 group hover:-translate-y-1.5"
           >
-            <SquircleIcon name={item.icon} size="lg" variant="blue" />
-            <h3 className="text-xl font-bold font-['Outfit'] text-slate-900 group-hover:text-blue-600 transition-colors">
-              {item.title}
-            </h3>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              {item.description}
-            </p>
+            <TiltCard
+              className="h-full p-8 rounded-[32px] bg-white border border-slate-200/90 hover:border-sky-300 shadow-sm transition-all group"
+              maxTilt={7}
+            >
+              <SquircleIcon name={item.icon} size="lg" variant="blue" className="mb-4" />
+              <h3 className="text-xl font-bold font-['Outfit'] text-slate-900 group-hover:text-blue-600 transition-colors">
+                {item.title}
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mt-2">
+                {item.description}
+              </p>
+            </TiltCard>
           </motion.div>
         ))}
       </div>
 
       {/* 3. Comparison Matrix: FAST TARGET CO vs Traditional Vendors */}
-      <div className="rounded-[36px] bg-white p-8 sm:p-12 border border-slate-200 space-y-8 shadow-sm overflow-hidden">
+      <div className="rounded-[36px] bg-white p-8 sm:p-12 border border-slate-200/90 space-y-8 shadow-sm overflow-hidden">
         <div className="text-center max-w-2xl mx-auto space-y-2">
           <span className="text-xs font-bold uppercase tracking-[0.25em] text-blue-600">
             Agency Comparison
@@ -137,7 +145,7 @@ export const WhyUsPage: React.FC<WhyUsPageProps> = ({ onNavigate }) => {
         </div>
       </div>
 
-      {/* 4. Client Testimonials */}
+      {/* 4. Client Testimonials with 3D Tilt */}
       <div className="space-y-8">
         <div className="text-center max-w-2xl mx-auto space-y-2">
           <span className="text-xs font-bold uppercase tracking-[0.25em] text-blue-600">
@@ -150,26 +158,45 @@ export const WhyUsPage: React.FC<WhyUsPageProps> = ({ onNavigate }) => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {TESTIMONIALS.map((t, idx) => (
-            <div
+            <TiltCard
               key={idx}
-              className="p-6 sm:p-8 rounded-[32px] bg-white border border-slate-200 hover:border-sky-300 shadow-sm hover:shadow-md flex flex-col justify-between space-y-6 transition-all"
+              className="p-6 sm:p-8 rounded-[32px] bg-white border border-slate-200/90 hover:border-sky-300 shadow-sm flex flex-col justify-between space-y-6"
+              maxTilt={6}
             >
               <div className="space-y-3">
                 <div className="flex text-amber-400 gap-1 text-sm">
                   {'★'.repeat(t.rating)}
                 </div>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed italic">
+                <p className="text-xs sm:text-sm text-slate-600 italic leading-relaxed">
                   "{t.quote}"
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-slate-100">
-                <p className="text-sm font-bold text-slate-900 font-['Outfit']">{t.author}</p>
-                <p className="text-xs text-blue-600 font-semibold">{t.role}</p>
+              <div className="pt-4 border-t border-slate-100 flex items-center gap-3">
+                <SquircleIcon variant="blue" size="sm">
+                  <span className="font-bold text-xs">{t.author[0]}</span>
+                </SquircleIcon>
+                <div>
+                  <h4 className="text-xs font-bold text-slate-900">{t.author}</h4>
+                  <p className="text-[11px] text-slate-500">{t.role}</p>
+                </div>
               </div>
-            </div>
+            </TiltCard>
           ))}
         </div>
+      </div>
+
+      {/* 5. Bottom Call to Action */}
+      <div className="text-center pt-8">
+        <LuxuryButton
+          variant="primary"
+          size="lg"
+          onClick={() => onNavigate('contact')}
+          icon={ArrowRight}
+          iconPosition="right"
+        >
+          EXPERIENCE THE FAST TARGET DIFFERENCE
+        </LuxuryButton>
       </div>
     </div>
   );

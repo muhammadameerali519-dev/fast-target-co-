@@ -18,6 +18,8 @@ import {
 } from 'lucide-react';
 import { PageId } from '../../types';
 import { SquircleIcon } from '../SquircleIcon';
+import { TiltCard } from '../TiltCard';
+import { LuxuryButton } from '../LuxuryButton';
 
 interface SocialMediaPageProps {
   onNavigate: (page: PageId) => void;
@@ -86,14 +88,16 @@ export const SocialMediaPage: React.FC<SocialMediaPageProps> = ({ onNavigate }) 
       
       {/* 1. Hero Section */}
       <div className="text-center max-w-4xl mx-auto space-y-6">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-50 border border-sky-200 text-sky-800 text-xs font-semibold uppercase tracking-wider shadow-sm">
-          <Share2 className="w-3.5 h-3.5 text-blue-600" />
+        <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white border border-sky-200/90 shadow-sm text-sky-800 text-xs font-bold uppercase tracking-wider">
+          <SquircleIcon variant="glow" size="xs">
+            <Share2 className="w-3.5 h-3.5 text-white" />
+          </SquircleIcon>
           <span>Social Media & Digital Growth Studio</span>
         </div>
 
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-black font-['Outfit'] text-slate-900 uppercase tracking-tight leading-[1.08]">
           SOCIAL MEDIA & <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-sky-600 to-blue-500">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-sky-600 to-blue-600">
             DIGITAL GROWTH.
           </span>
         </h1>
@@ -103,31 +107,33 @@ export const SocialMediaPage: React.FC<SocialMediaPageProps> = ({ onNavigate }) 
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
-          <button
+          <LuxuryButton
+            variant="primary"
+            size="lg"
             onClick={() => onNavigate('contact')}
-            className="px-8 py-4 rounded-[20px] bg-gradient-to-r from-blue-600 via-blue-500 to-sky-500 text-white font-bold text-xs sm:text-sm uppercase tracking-wider shadow-md shadow-blue-500/25 hover:shadow-lg hover:shadow-sky-400/30 hover:scale-105 transition-all flex items-center gap-2"
+            icon={ArrowRight}
+            iconPosition="right"
           >
-            <span>LAUNCH SOCIAL GROWTH</span>
-            <ArrowRight className="w-4 h-4" />
-          </button>
+            LAUNCH SOCIAL GROWTH
+          </LuxuryButton>
         </div>
       </div>
 
       {/* 2. Interactive Social Media Format Previews */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         
-        {/* Left: Simulated Instagram / Reels Vertical Feed Card */}
+        {/* Left: Simulated Instagram / Reels Vertical Feed Card with 3D Tilt */}
         <div className="lg:col-span-6 flex justify-center">
-          <div className="relative w-full max-w-[340px] rounded-[36px] bg-white p-4 border border-slate-200 shadow-xl select-none">
-            
+          <TiltCard
+            className="w-full max-w-[340px] rounded-[36px] bg-white p-4 border border-slate-200/90 shadow-[0_20px_50px_rgba(2,132,199,0.12)] select-none"
+            maxTilt={6}
+          >
             {/* Header */}
             <div className="flex items-center justify-between pb-3 border-b border-slate-100">
               <div className="flex items-center gap-2.5">
-                <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-sky-400 to-blue-600 p-[2px]">
-                  <div className="w-full h-full rounded-full bg-white flex items-center justify-center font-bold text-xs text-blue-600">
-                    FT
-                  </div>
-                </div>
+                <SquircleIcon variant="glow" size="sm">
+                  <span className="font-bold text-xs text-white">FT</span>
+                </SquircleIcon>
                 <div>
                   <div className="flex items-center gap-1">
                     <span className="text-xs font-bold text-slate-900">fasttarget.co</span>
@@ -136,7 +142,7 @@ export const SocialMediaPage: React.FC<SocialMediaPageProps> = ({ onNavigate }) 
                   <p className="text-[10px] text-slate-500">Global Trading & Agency</p>
                 </div>
               </div>
-              <span className="text-[10px] font-semibold text-blue-700 px-2 py-1 rounded-full bg-sky-50 border border-sky-200">
+              <span className="text-[10px] font-semibold text-blue-700 px-2.5 py-1 rounded-full bg-sky-50 border border-sky-200">
                 Trending ⚡
               </span>
             </div>
@@ -168,42 +174,56 @@ export const SocialMediaPage: React.FC<SocialMediaPageProps> = ({ onNavigate }) 
               </div>
             </div>
 
-            {/* Interaction Row */}
+            {/* Interaction Row with Apple Squircles */}
             <div className="space-y-2 pt-1">
               <div className="flex items-center justify-between text-slate-600">
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-3">
                   <button
                     onClick={handleLike}
-                    className="flex items-center gap-1.5 hover:text-rose-500 transition-colors"
+                    className="flex items-center gap-1.5 hover:text-rose-500 transition-colors cursor-pointer"
                   >
-                    <Heart
-                      className={`w-5 h-5 ${isLiked ? 'text-rose-500 fill-rose-500' : ''}`}
-                    />
+                    <SquircleIcon variant={isLiked ? 'rose' : 'white'} size="xs">
+                      <Heart
+                        className={`w-3.5 h-3.5 ${isLiked ? 'text-rose-500 fill-rose-500' : 'text-slate-600'}`}
+                      />
+                    </SquircleIcon>
                     <span className="text-xs font-bold font-mono">{likesCount.toLocaleString()}</span>
                   </button>
                   <div className="flex items-center gap-1.5">
-                    <MessageCircle className="w-5 h-5" />
+                    <SquircleIcon variant="white" size="xs">
+                      <MessageCircle className="w-3.5 h-3.5 text-slate-600" />
+                    </SquircleIcon>
                     <span className="text-xs font-bold font-mono">492</span>
                   </div>
-                  <Share2 className="w-5 h-5" />
+                  <SquircleIcon variant="white" size="xs">
+                    <Share2 className="w-3.5 h-3.5 text-slate-600" />
+                  </SquircleIcon>
                 </div>
-                <Bookmark className="w-5 h-5" />
+                <SquircleIcon variant="white" size="xs">
+                  <Bookmark className="w-3.5 h-3.5 text-slate-600" />
+                </SquircleIcon>
               </div>
 
-              <p className="text-xs text-slate-600 leading-relaxed">
+              <p className="text-xs text-slate-600 leading-relaxed pt-1">
                 <strong className="text-slate-900">fasttarget.co</strong> Seamlessly connecting cross-border commerce and modern app architecture. #agency #trading #iOS #growth
               </p>
             </div>
-          </div>
+          </TiltCard>
         </div>
 
         {/* Right: Campaign Growth & Ad ROI Estimator */}
         <div className="lg:col-span-6 space-y-6">
-          <div className="rounded-[32px] bg-white p-6 sm:p-8 border border-slate-200 space-y-6 shadow-sm">
+          <TiltCard
+            className="rounded-[34px] bg-white p-6 sm:p-8 border border-slate-200/90 space-y-6 shadow-sm"
+            maxTilt={5}
+          >
             <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-blue-600 flex items-center gap-1.5">
-                <BarChart3 className="w-4 h-4" /> Growth Impact Calculator
-              </span>
+              <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-blue-600">
+                <SquircleIcon variant="blue" size="xs">
+                  <BarChart3 className="w-3.5 h-3.5 text-blue-600" />
+                </SquircleIcon>
+                <span>Growth Impact Calculator</span>
+              </div>
               <h3 className="text-2xl font-bold font-['Outfit'] text-slate-900 mt-1">
                 Estimate Your Campaign Reach
               </h3>
@@ -236,21 +256,21 @@ export const SocialMediaPage: React.FC<SocialMediaPageProps> = ({ onNavigate }) 
 
             {/* Estimated Metrics Grid */}
             <div className="grid grid-cols-3 gap-3 pt-2">
-              <div className="p-3.5 rounded-[18px] bg-sky-50/70 border border-sky-100 text-center">
+              <div className="p-3.5 rounded-[20px] bg-sky-50/70 border border-sky-100 text-center">
                 <span className="text-[10px] text-slate-500 uppercase tracking-wider block">Est. Impressions</span>
                 <span className="text-lg sm:text-xl font-black font-['Outfit'] text-blue-700">
                   {estimatedReach.toLocaleString()}+
                 </span>
               </div>
 
-              <div className="p-3.5 rounded-[18px] bg-sky-50/70 border border-sky-100 text-center">
+              <div className="p-3.5 rounded-[20px] bg-sky-50/70 border border-sky-100 text-center">
                 <span className="text-[10px] text-slate-500 uppercase tracking-wider block">Targeted Clicks</span>
                 <span className="text-lg sm:text-xl font-black font-['Outfit'] text-sky-700">
                   {estimatedClicks.toLocaleString()}
                 </span>
               </div>
 
-              <div className="p-3.5 rounded-[18px] bg-sky-50/70 border border-sky-100 text-center">
+              <div className="p-3.5 rounded-[20px] bg-sky-50/70 border border-sky-100 text-center">
                 <span className="text-[10px] text-slate-500 uppercase tracking-wider block">Qualified Leads</span>
                 <span className="text-lg sm:text-xl font-black font-['Outfit'] text-emerald-600">
                   {estimatedLeads.toLocaleString()}
@@ -258,18 +278,21 @@ export const SocialMediaPage: React.FC<SocialMediaPageProps> = ({ onNavigate }) 
               </div>
             </div>
 
-            <button
+            <LuxuryButton
+              variant="primary"
+              size="md"
+              fullWidth
               onClick={() => onNavigate('contact')}
-              className="w-full py-3.5 rounded-[18px] bg-gradient-to-r from-blue-600 to-sky-500 text-white text-xs font-bold uppercase tracking-wider shadow-md shadow-blue-500/25 hover:shadow-lg hover:shadow-sky-400/30 hover:scale-[1.02] transition-all flex items-center justify-center gap-2"
+              icon={ArrowRight}
+              iconPosition="right"
             >
-              <span>Book Growth Strategy Call</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </button>
-          </div>
+              Book Growth Strategy Call
+            </LuxuryButton>
+          </TiltCard>
         </div>
       </div>
 
-      {/* 3. All Social Media Services Grid */}
+      {/* 3. All Social Media Services 3D Tilt Grid */}
       <div className="space-y-10">
         <div className="text-center max-w-2xl mx-auto space-y-2">
           <span className="text-xs font-bold uppercase tracking-[0.25em] text-blue-600">
@@ -282,9 +305,10 @@ export const SocialMediaPage: React.FC<SocialMediaPageProps> = ({ onNavigate }) 
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {SOCIAL_SERVICES.map((item, idx) => (
-            <div
+            <TiltCard
               key={idx}
-              className="p-6 rounded-[28px] bg-white border border-slate-200 hover:border-sky-300 shadow-sm hover:shadow-md transition-all space-y-3 group"
+              className="p-6 rounded-[30px] bg-white border border-slate-200/90 hover:border-sky-300 shadow-sm space-y-3 group"
+              maxTilt={7}
             >
               <SquircleIcon name={item.icon} size="md" variant="blue" />
               <h4 className="text-base font-bold font-['Outfit'] text-slate-900 group-hover:text-blue-600 transition-colors">
@@ -293,7 +317,7 @@ export const SocialMediaPage: React.FC<SocialMediaPageProps> = ({ onNavigate }) 
               <p className="text-xs text-slate-600 leading-relaxed">
                 {item.desc}
               </p>
-            </div>
+            </TiltCard>
           ))}
         </div>
       </div>

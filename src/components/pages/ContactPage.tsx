@@ -17,6 +17,9 @@ import {
 import { COMPANY_INFO, SERVICES } from '../../data/content';
 import { PageId } from '../../types';
 import { saveInquiry } from '../../utils/inquiriesStore';
+import { SquircleIcon } from '../SquircleIcon';
+import { TiltCard } from '../TiltCard';
+import { LuxuryButton } from '../LuxuryButton';
 
 interface ContactPageProps {
   initialService?: string;
@@ -72,7 +75,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ initialService = '' })
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
-    }, 800);
+    }, 700);
   };
 
   const constructWhatsAppMessage = () => {
@@ -87,13 +90,15 @@ export const ContactPage: React.FC<ContactPageProps> = ({ initialService = '' })
       
       {/* 1. Header Section */}
       <div className="text-center max-w-3xl mx-auto space-y-4">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-50 border border-sky-200 text-sky-800 text-xs font-semibold uppercase tracking-wider shadow-sm">
-          <MessageCircle className="w-3.5 h-3.5 text-blue-600" />
+        <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white border border-sky-200/90 shadow-sm text-sky-800 text-xs font-bold uppercase tracking-wider">
+          <SquircleIcon variant="glow" size="xs">
+            <MessageCircle className="w-3.5 h-3.5 text-white" />
+          </SquircleIcon>
           <span>Direct Inquiries & Executive Desks</span>
         </div>
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-black font-['Outfit'] text-slate-900 uppercase tracking-tight">
           LET'S BUILD SOMETHING <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-sky-600 to-blue-500">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-sky-600 to-blue-600">
             EXTRAORDINARY.
           </span>
         </h1>
@@ -105,8 +110,8 @@ export const ContactPage: React.FC<ContactPageProps> = ({ initialService = '' })
       {/* 2. Main Contact Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
         
-        {/* Left Column: Interactive Contact Form */}
-        <div className="lg:col-span-7 rounded-[36px] bg-white p-6 sm:p-10 border border-slate-200 shadow-sm space-y-6">
+        {/* Left Column: Interactive Contact Form with 3D Depth */}
+        <div className="lg:col-span-7 rounded-[36px] bg-white p-6 sm:p-10 border border-slate-200/90 shadow-sm space-y-6">
           <div className="space-y-1">
             <h3 className="text-2xl font-bold font-['Outfit'] text-slate-900">
               Project Consultation & Proposal Request
@@ -123,9 +128,9 @@ export const ContactPage: React.FC<ContactPageProps> = ({ initialService = '' })
                 animate={{ opacity: 1, scale: 1 }}
                 className="p-8 rounded-[28px] bg-sky-50/70 border border-emerald-300 text-center space-y-4 shadow-sm"
               >
-                <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto shadow-sm">
-                  <CheckCircle2 className="w-8 h-8" />
-                </div>
+                <SquircleIcon variant="emerald" size="2xl" className="mx-auto">
+                  <CheckCircle2 className="w-10 h-10 text-white" />
+                </SquircleIcon>
                 <h4 className="text-2xl font-black font-['Outfit'] text-slate-900">
                   INQUIRY RECEIVED SUCCESSFULLY
                 </h4>
@@ -134,16 +139,22 @@ export const ContactPage: React.FC<ContactPageProps> = ({ initialService = '' })
                 </p>
 
                 <div className="pt-4 flex flex-wrap justify-center gap-3">
-                  <a
+                  <LuxuryButton
+                    variant="emerald"
+                    size="md"
                     href={constructWhatsAppMessage()}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-6 py-3 rounded-[16px] bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold uppercase tracking-wider flex items-center gap-2 shadow-md shadow-emerald-500/25"
+                    icon={MessageCircle}
+                    iconPosition="left"
+                    squircleIcon
                   >
-                    <MessageCircle className="w-4 h-4" />
-                    <span>Fast-Track via WhatsApp Now</span>
-                  </a>
-                  <button
+                    Fast-Track via WhatsApp Now
+                  </LuxuryButton>
+
+                  <LuxuryButton
+                    variant="secondary"
+                    size="md"
                     onClick={() => {
                       setIsSubmitted(false);
                       setFormData({
@@ -155,16 +166,15 @@ export const ContactPage: React.FC<ContactPageProps> = ({ initialService = '' })
                         message: '',
                       });
                     }}
-                    className="px-4 py-3 rounded-[16px] bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold transition-all"
                   >
                     Send Another Inquiry
-                  </button>
+                  </LuxuryButton>
                 </div>
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
                 {validationError && (
-                  <div className="p-3 rounded-[14px] bg-rose-50 border border-rose-200 text-rose-700 text-xs font-medium">
+                  <div className="p-3.5 rounded-[16px] bg-rose-50 border border-rose-200 text-rose-700 text-xs font-medium">
                     {validationError}
                   </div>
                 )}
@@ -249,7 +259,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ initialService = '' })
                           type="button"
                           key={opt}
                           onClick={() => setFormData({ ...formData, budget: opt })}
-                          className={`p-2.5 rounded-[14px] text-xs font-semibold transition-all border text-center ${
+                          className={`p-2.5 rounded-[16px] text-xs font-semibold transition-all border text-center cursor-pointer ${
                             isSelected
                               ? 'bg-blue-600 text-white border-blue-600 shadow-md shadow-blue-500/25'
                               : 'bg-slate-50 text-slate-700 hover:bg-sky-50 border-slate-200'
@@ -278,34 +288,36 @@ export const ContactPage: React.FC<ContactPageProps> = ({ initialService = '' })
 
                 {/* Submit Action */}
                 <div className="pt-2">
-                  <button
+                  <LuxuryButton
                     type="submit"
+                    variant="primary"
+                    size="lg"
+                    fullWidth
                     disabled={isSubmitting}
-                    className="w-full py-4 rounded-[20px] bg-gradient-to-r from-blue-600 via-blue-500 to-sky-500 hover:from-blue-700 hover:to-sky-600 text-white font-bold text-xs sm:text-sm uppercase tracking-wider shadow-md shadow-blue-500/25 hover:shadow-lg hover:shadow-sky-400/30 transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                    icon={Send}
+                    iconPosition="right"
                   >
-                    {isSubmitting ? (
-                      <span>Sending Secure Inquiry...</span>
-                    ) : (
-                      <>
-                        <span>Submit Project Inquiry</span>
-                        <Send className="w-4 h-4" />
-                      </>
-                    )}
-                  </button>
+                    {isSubmitting ? 'Sending Secure Inquiry...' : 'Submit Project Inquiry'}
+                  </LuxuryButton>
                 </div>
               </form>
             )}
           </AnimatePresence>
         </div>
 
-        {/* Right Column: Global Desks & Direct Channels */}
+        {/* Right Column: Global Desks & Direct Channels with 3D Tilt */}
         <div className="lg:col-span-5 space-y-6">
           
           {/* UAE Direct Desk Card */}
-          <div className="p-6 sm:p-8 rounded-[32px] bg-white border border-slate-200 space-y-4 shadow-sm hover:border-sky-300 transition-all">
+          <TiltCard
+            className="p-6 sm:p-8 rounded-[34px] bg-white border border-slate-200/90 space-y-4 shadow-sm"
+            maxTilt={6}
+          >
             <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <span className="text-2xl">🇦🇪</span>
+              <div className="flex items-center gap-3">
+                <SquircleIcon variant="white" size="md">
+                  <span className="text-lg">🇦🇪</span>
+                </SquircleIcon>
                 <div>
                   <h4 className="font-bold text-slate-900 font-['Outfit']">UAE Operations & Trading Desk</h4>
                   <p className="text-xs text-blue-600 font-semibold">Dubai, United Arab Emirates</p>
@@ -318,31 +330,44 @@ export const ContactPage: React.FC<ContactPageProps> = ({ initialService = '' })
 
             <div className="space-y-2 text-xs text-slate-600">
               <p className="flex items-center gap-2 font-mono">
-                <Phone className="w-3.5 h-3.5 text-blue-600 shrink-0" />
-                <span className="text-slate-800">{COMPANY_INFO.contacts.uaePhone}</span>
+                <SquircleIcon variant="blue" size="xs">
+                  <Phone className="w-3 h-3 text-blue-600" />
+                </SquircleIcon>
+                <span className="text-slate-800 font-bold">{COMPANY_INFO.contacts.uaePhone}</span>
               </p>
               <p className="flex items-center gap-2">
-                <Mail className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+                <SquircleIcon variant="blue" size="xs">
+                  <Mail className="w-3 h-3 text-blue-600" />
+                </SquircleIcon>
                 <span className="text-slate-800">info@fasttarget.co</span>
               </p>
             </div>
 
-            <a
+            <LuxuryButton
+              variant="emerald"
+              size="md"
+              fullWidth
               href={COMPANY_INFO.contacts.uaeWhatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full py-3 rounded-[16px] bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-md shadow-emerald-500/20"
+              icon={MessageCircle}
+              iconPosition="left"
+              squircleIcon
             >
-              <MessageCircle className="w-4 h-4" />
-              <span>Chat on WhatsApp (UAE)</span>
-            </a>
-          </div>
+              Chat on WhatsApp (UAE)
+            </LuxuryButton>
+          </TiltCard>
 
           {/* Pakistan Direct Desk Card */}
-          <div className="p-6 sm:p-8 rounded-[32px] bg-white border border-slate-200 space-y-4 shadow-sm hover:border-sky-300 transition-all">
+          <TiltCard
+            className="p-6 sm:p-8 rounded-[34px] bg-white border border-slate-200/90 space-y-4 shadow-sm"
+            maxTilt={6}
+          >
             <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <span className="text-2xl">🇵🇰</span>
+              <div className="flex items-center gap-3">
+                <SquircleIcon variant="white" size="md">
+                  <span className="text-lg">🇵🇰</span>
+                </SquircleIcon>
                 <div>
                   <h4 className="font-bold text-slate-900 font-['Outfit']">Pakistan Tech & Logistics Desk</h4>
                   <p className="text-xs text-blue-600 font-semibold">Pakistan Regional Operations</p>
@@ -355,31 +380,39 @@ export const ContactPage: React.FC<ContactPageProps> = ({ initialService = '' })
 
             <div className="space-y-2 text-xs text-slate-600">
               <p className="flex items-center gap-2 font-mono">
-                <Phone className="w-3.5 h-3.5 text-blue-600 shrink-0" />
-                <span className="text-slate-800">{COMPANY_INFO.contacts.pkPhone}</span>
+                <SquircleIcon variant="blue" size="xs">
+                  <Phone className="w-3 h-3 text-blue-600" />
+                </SquircleIcon>
+                <span className="text-slate-800 font-bold">{COMPANY_INFO.contacts.pkPhone}</span>
               </p>
               <p className="flex items-center gap-2">
-                <Mail className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+                <SquircleIcon variant="blue" size="xs">
+                  <Mail className="w-3 h-3 text-blue-600" />
+                </SquircleIcon>
                 <span className="text-slate-800">support@fasttarget.co</span>
               </p>
             </div>
 
-            <a
+            <LuxuryButton
+              variant="emerald"
+              size="md"
+              fullWidth
               href={COMPANY_INFO.contacts.pkWhatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full py-3 rounded-[16px] bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-md shadow-emerald-500/20"
+              icon={MessageCircle}
+              iconPosition="left"
+              squircleIcon
             >
-              <MessageCircle className="w-4 h-4" />
-              <span>Chat on WhatsApp (PK)</span>
-            </a>
-          </div>
+              Chat on WhatsApp (PK)
+            </LuxuryButton>
+          </TiltCard>
 
-          {/* Support Guarantee Card */}
-          <div className="p-5 rounded-[24px] bg-sky-50/70 border border-sky-100 flex items-center gap-3 shadow-sm">
-            <div className="w-10 h-10 rounded-[14px] bg-sky-100 border border-sky-200 flex items-center justify-center text-blue-600 shrink-0">
-              <Headphones className="w-5 h-5" />
-            </div>
+          {/* Support Guarantee Card with Apple Squircle */}
+          <div className="p-5 rounded-[26px] bg-sky-50/70 border border-sky-100 flex items-center gap-3 shadow-sm">
+            <SquircleIcon variant="blue" size="md">
+              <Headphones className="w-5 h-5 text-blue-600" />
+            </SquircleIcon>
             <div className="text-xs">
               <span className="font-bold text-slate-900 block">24/7 Dedicated Client Assurance</span>
               <span className="text-slate-600">Active project telemetry and continuous milestone reporting.</span>

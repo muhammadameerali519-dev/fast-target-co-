@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, ArrowRight, Sparkles, ShieldCheck } from 'lucide-react';
+import { Menu, X, ArrowRight, ShieldCheck, Home, Info, Briefcase, Smartphone, Globe, Palette, Share2, Ship, Award, Mail } from 'lucide-react';
 import { PageId } from '../types';
 import { CompanyLogo } from './CompanyLogo';
+import { SquircleIcon } from './SquircleIcon';
+import { LuxuryButton } from './LuxuryButton';
 
 interface NavbarProps {
   currentPage?: PageId;
@@ -10,17 +12,17 @@ interface NavbarProps {
   onNavigate: (page: PageId) => void;
 }
 
-const NAV_ITEMS: { id: PageId; label: string; shortLabel?: string }[] = [
-  { id: 'home', label: 'Home' },
-  { id: 'about', label: 'About' },
-  { id: 'services', label: 'Services' },
-  { id: 'app-dev', label: 'App Dev' },
-  { id: 'web-dev', label: 'Web Dev' },
-  { id: 'ui-ux', label: 'UI/UX' },
-  { id: 'social-media', label: 'Social Media' },
-  { id: 'trading', label: 'Trading' },
-  { id: 'why-us', label: 'Why Us' },
-  { id: 'contact', label: 'Contact' },
+const NAV_ITEMS: { id: PageId; label: string; icon: string }[] = [
+  { id: 'home', label: 'Home', icon: 'Home' },
+  { id: 'about', label: 'About', icon: 'Info' },
+  { id: 'services', label: 'Services', icon: 'Briefcase' },
+  { id: 'app-dev', label: 'App Dev', icon: 'Smartphone' },
+  { id: 'web-dev', label: 'Web Dev', icon: 'Globe' },
+  { id: 'ui-ux', label: 'UI/UX', icon: 'Palette' },
+  { id: 'social-media', label: 'Social Media', icon: 'Share2' },
+  { id: 'trading', label: 'Trading', icon: 'Ship' },
+  { id: 'why-us', label: 'Why Us', icon: 'Award' },
+  { id: 'contact', label: 'Contact', icon: 'Mail' },
 ];
 
 export const Navbar: React.FC<NavbarProps> = ({
@@ -36,7 +38,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -48,25 +50,25 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   return (
     <header className="fixed top-0 left-0 right-0 z-40 px-3 sm:px-6 py-3 sm:py-4 pointer-events-none transition-all duration-300">
-      <div className="max-w-7xl mx-auto flex items-center justify-between pointer-events-auto">
+      <div className="max-w-7xl mx-auto flex items-center justify-between gap-4 pointer-events-auto">
         
-        {/* Brand Logo & Geometric FTC Monogram Mark */}
+        {/* Brand Zone: 1-line clean Logo and Wordmark */}
         <button
           onClick={() => handleNavClick('home')}
-          className="group flex items-center px-3 py-1.5 rounded-[20px] bg-white/90 backdrop-blur-xl border border-slate-200 hover:border-sky-400 shadow-sm hover:shadow-md transition-all duration-300 hover:scale-[1.02]"
+          className="group flex items-center px-3 py-1.5 rounded-[22px] bg-white/95 backdrop-blur-2xl border border-slate-200/90 hover:border-sky-400 shadow-[0_4px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_24px_rgba(2,132,199,0.15)] transition-all duration-300 hover:scale-[1.02] cursor-pointer"
         >
           <CompanyLogo variant="nav" />
         </button>
 
         {/* Desktop Navigation Links Pill */}
-        <nav className="hidden lg:flex items-center gap-1 px-2.5 py-1.5 rounded-[22px] bg-white/90 backdrop-blur-2xl border border-slate-200 shadow-sm">
+        <nav className="hidden lg:flex items-center gap-1 px-2.5 py-1.5 rounded-[24px] bg-white/95 backdrop-blur-2xl border border-slate-200/90 shadow-[0_4px_20px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.8)]">
           {NAV_ITEMS.map((item) => {
             const isActive = current === item.id;
             return (
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className={`relative px-3 py-1.5 text-xs font-semibold rounded-[14px] transition-all duration-200 whitespace-nowrap ${
+                className={`relative px-3 py-1.5 text-xs font-semibold rounded-[16px] transition-all duration-200 whitespace-nowrap cursor-pointer ${
                   isActive
                     ? 'text-white'
                     : 'text-slate-600 hover:text-blue-600 hover:bg-sky-50/70'
@@ -75,7 +77,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 {isActive && (
                   <motion.div
                     layoutId="activeNavIndicator"
-                    className="absolute inset-0 rounded-[14px] bg-gradient-to-r from-blue-600 to-sky-500 shadow-md shadow-blue-500/25"
+                    className="absolute inset-0 rounded-[16px] bg-gradient-to-r from-blue-600 via-blue-700 to-sky-600 shadow-[0_4px_14px_rgba(37,99,235,0.35)]"
                     transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -85,56 +87,64 @@ export const Navbar: React.FC<NavbarProps> = ({
           })}
         </nav>
 
-        {/* Right Actions: Admin Inquiries + Start Project CTA + Mobile Menu Button */}
+        {/* Right Action Zone: Inquiries Desk + Luxury CTA Button */}
         <div className="flex items-center gap-2">
-          {/* Admin Inquiries Desk Icon Button */}
+          {/* Admin Inquiries Desk with Apple Squircle */}
           <button
             onClick={() => handleNavClick('admin')}
-            className={`flex items-center gap-1.5 px-3 py-2 rounded-[16px] backdrop-blur-xl border text-xs font-semibold transition-all shadow-sm ${
+            className={`group flex items-center gap-2 px-3 py-1.5 rounded-[18px] backdrop-blur-xl border text-xs font-semibold transition-all duration-200 cursor-pointer shadow-sm ${
               current === 'admin'
                 ? 'bg-sky-100 border-sky-300 text-blue-700 shadow-sky-100'
-                : 'bg-white/90 border-slate-200 text-slate-700 hover:text-blue-600 hover:border-sky-300 hover:bg-sky-50/60'
+                : 'bg-white/95 border-slate-200 text-slate-700 hover:text-blue-600 hover:border-sky-300 hover:bg-sky-50/70'
             }`}
             title="Inquiries Admin Desk"
           >
-            <ShieldCheck className="w-3.5 h-3.5 text-blue-600" />
-            <span className="hidden xl:inline text-[11px] font-bold">Inquiries Desk</span>
+            <SquircleIcon variant={current === 'admin' ? 'glow' : 'blue'} size="xs">
+              <ShieldCheck className="w-3.5 h-3.5" />
+            </SquircleIcon>
+            <span className="hidden xl:inline text-[11px] font-bold">Inquiries</span>
           </button>
 
-          {/* Primary CTA Button */}
-          <button
+          {/* Primary CTA Luxury Button */}
+          <LuxuryButton
+            variant="primary"
+            size="sm"
             onClick={() => handleNavClick('contact')}
-            className="group relative px-4 sm:px-5 py-2 sm:py-2.5 rounded-[18px] bg-gradient-to-r from-blue-600 to-sky-500 hover:from-blue-700 hover:to-sky-600 text-white text-xs sm:text-sm font-bold shadow-md shadow-blue-500/25 hover:shadow-lg hover:shadow-sky-400/30 transition-all duration-300 flex items-center gap-1.5 hover:scale-[1.03] active:scale-[0.98]"
+            icon={ArrowRight}
+            iconPosition="right"
+            className="hidden sm:inline-flex"
           >
-            <span>START A PROJECT</span>
-            <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
-          </button>
+            START PROJECT
+          </LuxuryButton>
 
-          {/* Mobile Hamburger Toggle */}
+          {/* Mobile Hamburger Toggle with Apple Squircle */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden w-10 h-10 rounded-[16px] bg-white/90 backdrop-blur-xl border border-slate-200 flex items-center justify-center text-slate-700 hover:text-blue-600 hover:border-sky-400 shadow-sm transition-all"
-            aria-label="Toggle menu"
+            className="lg:hidden cursor-pointer"
+            aria-label="Toggle navigation menu"
           >
-            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            <SquircleIcon variant={mobileMenuOpen ? 'glow' : 'white'} size="md">
+              {mobileMenuOpen ? <X className="w-4 h-4 text-white" /> : <Menu className="w-4 h-4 text-slate-700" />}
+            </SquircleIcon>
           </button>
         </div>
       </div>
 
-      {/* Mobile Drawer Menu */}
+      {/* Mobile Drawer Menu with Apple Squircle Icons */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, y: -20, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -20, scale: 0.96 }}
-            transition={{ duration: 0.25, ease: 'easeOut' }}
-            className="lg:hidden pointer-events-auto mt-2 mx-auto max-w-lg rounded-[28px] bg-white/95 backdrop-blur-2xl border border-slate-200 p-5 shadow-2xl text-slate-800"
+            transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:hidden pointer-events-auto mt-2 mx-auto max-w-lg rounded-[32px] bg-white/95 backdrop-blur-2xl border border-slate-200 p-5 shadow-[0_25px_60px_-15px_rgba(2,132,199,0.25)] text-slate-800"
           >
             <div className="flex items-center justify-between pb-3 mb-3 border-b border-slate-100">
-              <span className="text-xs font-bold uppercase tracking-wider text-blue-600 flex items-center gap-1.5">
-                <Sparkles className="w-3.5 h-3.5 text-sky-500" /> Navigation Menu
+              <span className="text-xs font-bold uppercase tracking-wider text-blue-600">
+                Navigation Directory
               </span>
+              <span className="text-[10px] text-slate-400 font-mono">FAST TARGET CO</span>
             </div>
 
             <div className="grid grid-cols-2 gap-2">
@@ -144,35 +154,46 @@ export const Navbar: React.FC<NavbarProps> = ({
                   <button
                     key={item.id}
                     onClick={() => handleNavClick(item.id)}
-                    className={`flex items-center justify-between px-3.5 py-2.5 rounded-[16px] text-xs font-semibold text-left transition-all ${
+                    className={`flex items-center gap-2.5 p-2 rounded-[18px] text-xs font-semibold text-left transition-all cursor-pointer ${
                       isActive
                         ? 'bg-blue-600 text-white shadow-md shadow-blue-500/25'
-                        : 'bg-slate-50 text-slate-700 border border-slate-100 hover:bg-sky-50 hover:text-blue-600'
+                        : 'bg-slate-50 text-slate-700 border border-slate-100 hover:bg-sky-50 hover:text-blue-600 hover:border-sky-200'
                     }`}
                   >
-                    <span>{item.label}</span>
-                    {isActive && <div className="w-1.5 h-1.5 rounded-full bg-sky-200" />}
+                    <SquircleIcon
+                      name={item.icon}
+                      size="xs"
+                      variant={isActive ? 'glow' : 'blue'}
+                    />
+                    <span className="truncate">{item.label}</span>
                   </button>
                 );
               })}
             </div>
 
             <div className="mt-4 pt-3 border-t border-slate-100 flex flex-col gap-2">
-              <button
+              <LuxuryButton
+                variant="secondary"
+                size="sm"
+                fullWidth
                 onClick={() => handleNavClick('admin')}
-                className="w-full py-2.5 rounded-[16px] bg-sky-50 border border-sky-200 hover:bg-sky-100 text-blue-700 text-xs font-bold text-center flex items-center justify-center gap-2 shadow-sm"
+                icon={ShieldCheck}
+                iconPosition="left"
+                squircleIcon
               >
-                <ShieldCheck className="w-4 h-4 text-blue-600" />
-                <span>INQUIRIES ADMIN PORTAL</span>
-              </button>
-              
-              <button
+                Inquiries Admin Portal
+              </LuxuryButton>
+
+              <LuxuryButton
+                variant="primary"
+                size="sm"
+                fullWidth
                 onClick={() => handleNavClick('contact')}
-                className="w-full py-2.5 rounded-[16px] bg-gradient-to-r from-blue-600 to-sky-500 text-white text-xs font-bold text-center flex items-center justify-center gap-2 shadow-md shadow-blue-500/25"
+                icon={ArrowRight}
+                iconPosition="right"
               >
-                <span>CONTACT US TODAY</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </button>
+                Request Quote Today
+              </LuxuryButton>
             </div>
           </motion.div>
         )}
